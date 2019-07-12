@@ -8,6 +8,7 @@ SETUVAR _fish_abbr_alacriconf:nvim\x20\x7e/\x2econfig/alacritty/alacritty\x2eyml
 SETUVAR _fish_abbr_bspconf:nvim\x20\x7e/\x2econfig/bspwm/bspwmrc
 SETUVAR _fish_abbr_fishconf:nvim\x20\x7e/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_i3conf:nvim\x20\x7e/\x2econfig/i3/config
+SETUVAR _fish_abbr_keyconf:nvim\x20\x7e/\x2econfig/sxhkd/sxhkdrc
 SETUVAR _fish_abbr_pm:sudo\x20pacman
 SETUVAR _fish_abbr_polybarconf:nvim\x20\x2econfig/polybar/config
 SETUVAR _fish_abbr_polyconf:nvim\x20\x7e/\x2econfig/polybar/config
@@ -19,7 +20,7 @@ SETUVAR _fish_abbr_sv:sudo\x20nvim
 SETUVAR _fish_abbr_sxhkdconf:nvim\x20\x7e/\x2econfig/sxhkd/sxhkdrc
 SETUVAR _fish_abbr_v:nvim
 SETUVAR _fish_abbr_vi:nvim
-SETUVAR _fish_abbr_viconf:nvim\x20\x7e/\x2evimrc
+SETUVAR _fish_abbr_viconf:nvim\x20\x7e/\x2econfig/nvim/init\x2evim
 SETUVAR _fish_abbr_vifzf:nvim\x20\x28fzf\x29
 SETUVAR _fish_abbr_vim:nvim
 SETUVAR fish_color_autosuggestion:555\x1ebrblack

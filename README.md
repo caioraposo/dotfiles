@@ -1,2 +1,2 @@
 # dotfiles
-My Linux/Unix configuration file.
+My Linux/Unix workspace configuration files.

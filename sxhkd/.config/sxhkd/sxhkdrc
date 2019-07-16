@@ -4,7 +4,6 @@
 # wm independent hotkeys
 #
 
-# terminal emulator
 super + Return
 	$TERMINAL
 
@@ -18,6 +17,9 @@ super + m
 	$TERMINAL -e cmus
 
 super + @space
+	rofi -show drun
+
+super + shift + @space
 	rofi -show run
 
 super + Escape
@@ -25,6 +27,8 @@ super + Escape
 
 super + End
 	poweroff
+
+
 #
 # bspwm hotkeys
 #

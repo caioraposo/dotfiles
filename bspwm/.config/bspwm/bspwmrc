@@ -2,6 +2,7 @@
 
 
 bspc monitor HDMI-1-1 -d I II III IV V VI VII VIII IX X
+# bspc monitor -d I II III IV V VI VII VIII IX X
 
 
 unfocused=#3A2F3F
@@ -31,13 +32,14 @@ bspc config single_monocle				false
 bspc rule -a Gimp desktop='^3' state=floating follow=on
 bspc rule -a qutebrowser desktop='^2'
 bspc rule -a Spotify:spotify desktop='^5'
-bspc rule -a RocketLeague state=floating
+
 
 # AUTOSTART
 sxhkd &
 feh --bg-scale ~/Pictures/Wallpapers/japan-purple.jpg &
 $HOME/.config/polybar/launch.sh &
 setxkbmap br &
+dunst &
 nm-applet &
 fcitx &
 compton -b &

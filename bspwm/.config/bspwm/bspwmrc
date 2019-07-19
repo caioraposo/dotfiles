@@ -2,7 +2,7 @@
 
 
 
-if [ $(xrandr --listmonitors | wc -l) > 2 ]; then
+if [ $(xrandr --listmonitors | wc -l) -ge 3 ]; then
 	bspc monitor HDMI-1-1 -d I II III IV V VI VII VIII IX X
 else
 	bspc monitor -d I II III IV V VI VII VIII IX X

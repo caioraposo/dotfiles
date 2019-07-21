@@ -34,8 +34,9 @@ bspc config single_monocle				false
 
 # RULES
 bspc rule -a Gimp desktop='^3' state=floating follow=on
-bspc rule -a qutebrowser desktop='^2'
+bspc rule -a firefox desktop='^2'
 bspc rule -a Spotify:spotify desktop='^5'
+bspc rule -a [ $TERMINAL -e cmus ] desktop='^5'
 
 
 # AUTOSTART

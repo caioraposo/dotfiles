@@ -28,6 +28,8 @@ abbr cfa 		"nvim ~/.config/alacritty/alacritty.yml"
 abbr cfbsp 		"nvim ~/.config/bspwm/bspwmrc"
 abbr cfk 		"nvim ~/.config/sxhkd/sxhkdrc"
 
+alias vim=nvim
+
 
 set PATH /usr/local/bin /usr/sbin $PATH
 
@@ -45,3 +47,5 @@ end
 eval ~/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
+
+alias poetry_shell='. (dirname (poetry run which python))/activate.fish'

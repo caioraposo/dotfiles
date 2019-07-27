@@ -32,7 +32,7 @@ green = #8cff66
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 30
 ;offset-x = 1%
 ;offset-y = 1%
 fixed-center = false
@@ -47,7 +47,7 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
-padding = 0
+padding = 10
 padding-left = 0
 padding-right = 0
 
@@ -348,7 +348,8 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
+
 
 ; vim:ft=dosini

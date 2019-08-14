@@ -1,12 +1,24 @@
 #! /bin/sh
 
 
+# AUTOSTART
+wmname LG3D &
+sxhkd &
+feh --bg-scale ~/Pictures/Wallpapers/majoras-moon.jpg &
+$HOME/.config/polybar/launch.sh &
+setxkbmap br &
+dunst &
+nm-applet &
+fcitx &
+# compton -b &
+blueman-applet &
+redshift-gtk &
 
-if [ $(xrandr --listmonitors | wc -l) -ge 3 ]; then
-	bspc monitor HDMI-1-1 -d I II III IV V VI VII VIII IX X
-else
-	bspc monitor -d I II III IV V VI VII VIII IX X
-fi
+
+
+# MONITORS
+bspc monitor HDMI-1-1 -d I II III IV V VI VII VIII IX X
+bspc monitor eDP-1-1 -d I II III IV V VI VII VIII IX X
 
 
 unfocused=#3A2F3F
@@ -33,22 +45,22 @@ bspc config single_monocle				false
 
 
 # RULES
-bspc rule -a Gimp desktop='^3' state=floating follow=on
-bspc rule -a firefox desktop='^2'
-bspc rule -a qutebrowser desktop='^2'
-bspc rule -a Spotify:spotify desktop='^5'
-bspc rule -a [ $TERMINAL -e cmus ] desktop='^5'
+bspc rule -a Nightly desktop=^2
+bspc rule -a firefox desktop=^2
+bspc rule -a qutebrowser desktop=^2
 
+bspc rule -a dolphin desktop=^4
 
-# AUTOSTART
-sxhkd &
-feh --bg-scale ~/Pictures/Wallpapers/japan-purple.jpg &
-$HOME/.config/polybar/launch.sh &
-setxkbmap br &
-dunst &
-nm-applet &
-fcitx &
-# compton -b &
-blueman-applet &
-redshift-gtk &
+bspc rule -a "Gimp-2.10:gimp-2.10" desktop=^4 follow=on
+bspc rule -a Inkscape desktop=^4
+bspc rule -a krita desktop=^4
+
+bspc rule -a "TelegramDesktop:telegram-desktop" desktop=^5
+bspc rule -a discord desktop=^5
+
+bspc rule -a "Spotify:spotify" desktop=^6
+
+bspc rule -a '*:libreofficedev' state=tiled
+bspc rule -a '*:soffice' state=tiled
+
 

@@ -1,9 +1,0 @@
-#!/bin/sh
-
-
-export SXHKD_SHELL='/usr/bin/sh'
-export TERMINAL=alacritty
-export BROWSER=firefox
-export EDITOR=nvim
-export QT_QPA_PLATFORMTHEME='qt5ct'
-export TRIMMOMATIC_ADAPTERS='{$HOME}/miniconda3/share/trimmomatic/adapters/'

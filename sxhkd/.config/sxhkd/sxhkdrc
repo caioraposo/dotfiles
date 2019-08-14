@@ -13,6 +13,9 @@ super + b
 super + r
 	$TERMINAL -e ranger
 
+super + shift + f
+	$TERMINAL -e vifm
+
 super + m
 	$TERMINAL -e cmus
 

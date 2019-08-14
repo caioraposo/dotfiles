@@ -3,7 +3,8 @@
 
 export SXHKD_SHELL='/usr/bin/sh'
 export TERMINAL=alacritty
-export BROWSER=qutebrowser
+export BROWSER=firefox-nightly
 export EDITOR=nvim
 export QT_QPA_PLATFORMTHEME='qt5ct'
 export TRIMMOMATIC_ADAPTERS='{$HOME}/miniconda3/share/trimmomatic/adapters/'
+

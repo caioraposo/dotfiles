@@ -6,6 +6,7 @@ function fish_greeting
 end
 
 
+
 abbr vi	 "nvim"
 abbr vif "nvim (fzf)"
 abbr py "python3"
@@ -42,10 +43,11 @@ if status is-login
 end
 
 
+alias poetry_shell='. (dirname (poetry run which python))/activate.fish'
+
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-eval ~/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+eval /home/caio/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
-
-alias poetry_shell='. (dirname (poetry run which python))/activate.fish'

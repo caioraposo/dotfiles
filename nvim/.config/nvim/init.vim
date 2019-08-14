@@ -1,9 +1,9 @@
 set termguicolors
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set path+=**
 filetype plugin on
-set nocompatible
 set laststatus=2
 set number
 set relativenumber
@@ -30,10 +30,15 @@ nnoremap <A-l> <C-w>l
 nnoremap <S-j> :tabnext<CR><C-L>
 nnoremap <S-k> :-tabnext<CR><C-L>
 
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
 let mapleader="\<SPACE>"
 map <C-o> :FZF<CR>
 
 call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'dylanaraps/wal.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim'
@@ -59,3 +64,5 @@ let g:lightline = {
 	  \	}
 
 let $FZF_DEFAULT_COMMAND = "find -L"
+
+set tags=./tags;/

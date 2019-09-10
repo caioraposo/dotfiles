@@ -6,12 +6,16 @@ intern=eDP-1-1
 extern=HDMI-1-1
 
 if xrandr | grep "$extern disconnected"; then
-    xrandr --output "$extern" --off --output "$intern" --auto
+    # Use internal monitor
+    xrandr --output "$extern" --off --output "$intern" --auto 
 else
-    xrandr --output "$intern" --off --output "$extern" --auto
+    # Switch to exernal monitor
+    xrandr --output "$intern" --off --output "$extern" --auto --rate 144
 fi
 
 [ -f "$HOME/.xprofile" ] && . ~/.xprofile
+
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 session=${1:-bspwm}
 
@@ -21,6 +25,7 @@ case $session in
     kde				 ) exec startkde;;
 	openbox          ) exec openbox-session;;
 	cinnamon         ) exec cinnamon-session;;
+	xfce             ) exec startxfce4;;
 
 	*) exec $1;;
 esac

@@ -1,0 +1,14 @@
+#!/bin/sh
+# Profile file. Runs on login.
+
+
+export SXHKD_SHELL="/usr/bin/sh"
+export TERMINAL="alacritty"
+export BROWSER="firefox-nightly"
+export EDITOR="nvim"
+export FILE="vifm"
+
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export TRIMMOMATIC_ADAPTERS="{$HOME}/miniconda3/share/trimmomatic/adapters/"
+
+

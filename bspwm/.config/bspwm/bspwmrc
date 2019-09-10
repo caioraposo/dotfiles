@@ -1,19 +1,4 @@
-#! /bin/sh
-
-
-# AUTOSTART
-wmname LG3D &
-sxhkd &
-feh --bg-scale ~/Pictures/Wallpapers/japan-purple.jpg &
-$HOME/.config/polybar/launch.sh &
-setxkbmap br &
-dunst &
-nm-applet &
-fcitx &
-# compton -b &
-blueman-applet &
-redshift-gtk &
-
+#!/bin/sh
 
 
 # MONITORS

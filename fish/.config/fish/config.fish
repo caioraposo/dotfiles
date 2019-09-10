@@ -30,7 +30,9 @@ abbr cfbsp 		"nvim ~/.config/bspwm/bspwmrc"
 abbr cfk 		"nvim ~/.config/sxhkd/sxhkdrc"
 
 alias vim=nvim
-
+alias tcn='mv --force -t ~/.local/share/Trash '
+alias cpv='rsync -ah --info=progress2'
+alias gh='history|grep'
 
 set PATH /usr/local/bin /usr/sbin $PATH
 

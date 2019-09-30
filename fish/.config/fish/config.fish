@@ -5,22 +5,27 @@ fish_vi_key_bindings
 function fish_greeting
 end
 
+# Open file manager inside fish
+function file_manager
+    lf
+end
 
+# ABBREVIATIONS
+abbr vi	    "nvim"
+abbr vif    "nvim (fzf)"
+abbr py     "python3"
+abbr sp     "sudo pacman"
+abbr sps    "sudo pacman -S"
+abbr ys     "yay -S"
+abbr yss    "yay -Ss"
+abbr g      "git"
+abbr gs     "git status"
+abbr gb     "git branch"
+abbr gc     'git commit -m "'
+abbr gch    "git checkout"
+abbr ga     "git add"
 
-abbr vi	 "nvim"
-abbr vif "nvim (fzf)"
-abbr py "python3"
-abbr sp "sudo pacman"
-abbr sps "sudo pacman -S"
-abbr ys "yay -S"
-abbr yss "yay -Ss"
-abbr g "git"
-abbr gs "git status"
-abbr gb "git branch"
-abbr gc 'git commit -m "'
-abbr gch "git checkout"
-abbr ga "git add"
-
+# OPEN CONIGURATION FILES
 abbr cfi3 		"nvim ~/.config/i3/config"
 abbr cfbar 		"nvim ~/.config/polybar/config"
 abbr cff 		"nvim ~/.config/fish/config.fish"
@@ -28,13 +33,17 @@ abbr cfvi 		"nvim ~/.config/nvim/init.vim"
 abbr cfa 		"nvim ~/.config/alacritty/alacritty.yml"
 abbr cfbsp 		"nvim ~/.config/bspwm/bspwmrc"
 abbr cfk 		"nvim ~/.config/sxhkd/sxhkdrc"
+abbr cfr 	    "nvim ~/.config/rofi/.config/rofi/config"
 
-alias vim=nvim
+
 alias tcn='mv --force -t ~/.local/share/Trash '
 alias cpv='rsync -ah --info=progress2'
 alias gh='history|grep'
 
-set PATH /usr/local/bin /usr/sbin $PATH
+
+# Keybindins
+# Open file manager while in insert vi mode
+bind --mode insert \co file_manager
 
 
 # Start X at login
@@ -45,6 +54,7 @@ if status is-login
 end
 
 
+# Activate python project virtual environment
 alias poetry_shell='. (dirname (poetry run which python))/activate.fish'
 
 

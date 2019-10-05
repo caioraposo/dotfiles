@@ -50,5 +50,5 @@ bspc rule -a '*:libreofficedev' state=tiled
 bspc rule -a '*:soffice' state=tiled
 
 
-# FIX JAVA WM COMPACTIBILITY
+# FIX JAVA APPLICATIONS COMPACTIBILITY
 wmname LG3D &

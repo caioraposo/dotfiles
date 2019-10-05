@@ -2,6 +2,8 @@
 
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 
+xrdb -merge ~/.Xresources
+
 intern=eDP-1-1
 extern=HDMI-1-1
 
@@ -15,19 +17,21 @@ fi
 
 [ -f "$HOME/.xprofile" ] && . ~/.xprofile
 
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-session=${1:-bspwm}
+# AUTOSTART PROGRAMS
+sxhkd &
+# feh --bg-scale ~/Pictures/Wallpapers/japan-purple.jpg &
+wal -R
+$HOME/.config/polybar/launch.sh &
+setxkbmap br &
+dunst &
+nm-applet &
+fcitx &
+# compton &
+blueman-applet &
+# redshift-gtk &
 
-case $session in
-    bspwm            ) exec bspwm;;
-    i3|i3wm          ) exec i3;;
-    kde				 ) exec startkde;;
-	openbox          ) exec openbox-session;;
-	cinnamon         ) exec cinnamon-session;;
-	xfce             ) exec startxfce4;;
 
-	*) exec $1;;
-esac
 
+exec bspwm
 

@@ -1,1 +1,1 @@
-/home/caio/.local/share/omf/themes/bobthefish/fish_prompt.fish
+/home/caio/.local/share/omf/themes/pure/fish_prompt.fish

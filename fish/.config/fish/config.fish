@@ -24,6 +24,8 @@ abbr gb     "git branch"
 abbr gc     'git commit -m "'
 abbr gch    "git checkout"
 abbr ga     "git add"
+abbr gd     "git diff"
+abbr sctl   "systemctl"
 
 # OPEN CONIGURATION FILES
 abbr cfi3 		"nvim ~/.config/i3/config"
@@ -34,6 +36,7 @@ abbr cfa 		"nvim ~/.config/alacritty/alacritty.yml"
 abbr cfbsp 		"nvim ~/.config/bspwm/bspwmrc"
 abbr cfk 		"nvim ~/.config/sxhkd/sxhkdrc"
 abbr cfr 	    "nvim ~/.config/rofi/.config/rofi/config"
+abbr cflf 		"nvim ~/.config/lf/lfrc"
 
 
 alias tcn='mv --force -t ~/.local/share/Trash '
@@ -56,12 +59,6 @@ end
 
 # Activate python project virtual environment
 alias poetry_shell='. (dirname (poetry run which python))/activate.fish'
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /home/caio/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
 
 
 # THEME SETTINGS

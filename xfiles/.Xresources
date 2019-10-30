@@ -14,7 +14,7 @@ Xft.dpi: 96
 XTerm.termName: xterm-256color
 XTerm.vt100.locale: true
 XTerm.vt100.selectToClipboard: true
-Xcursor*theme: Adwaita
+Xcursor*theme: capitaine-cursors
 XTerm.scaleHeight: 1.01
 
 URxvt.scrollBar: false
@@ -26,23 +26,47 @@ URxvt.matcher.button: 1
 URxvt.matcher.rend.0: Uline Bold fg5
 URxvt*borderless: false
 URxvt.letterSpace: 0
-*background:  #282F37
-*foreground:  #F1FCF9
-*cursorColor: #F1FCF9
-*color0:      #20262C
-*color1:      #DB86BA
-*color2:      #74DD91
-*color3:      #E49186
-*color4:      #75DBE1
-*color5:      #B4A1DB
-*color6:      #9EE9EA
-*color7:      #F1FCF9
-*color8:      #465463
-*color9:      #D04E9D
-*color10:     #4BC66D
-*color11:     #DB695B
-*color12:     #3DBAC2
-*color13:     #825ECE
-*color14:     #62CDCD
-*color15:     #E0E5E5
 
+! Dracula Xresources palette
+!! COLORS
+
+! special
+URxvt*foreground:   #bbc5ff
+URxvt*background:   [100]#292d3e
+URxvt*cursorColor:  #bbc5ff
+
+XTerm*foreground: #bbc5ff
+XTerm*background: #292d3e
+XTerm*cursorColor: #bbc5ff
+
+! black
+*.color0:       #101010  !! originally #292d3e
+*.color8:       #434758
+
+! red
+*.color1:       #f07178
+*.color9:       #ff8b92
+
+! green
+*.color2:       #c3e88d
+*.color10:      #ddffa7
+
+! yellow
+*.color3:       #ffcb6b
+*.color11:      #ffe585
+
+! blue
+*.color4:       #82aaff
+*.color12:      #9cc4ff
+
+! magenta
+*.color5:       #c792ea
+*.color13:      #e1acff
+
+! cyan
+*.color6:       #89ddff
+*.color14:      #a3f7ff
+
+! white
+*.color7:       #d0d0d0
+*.color15:      #ffffff

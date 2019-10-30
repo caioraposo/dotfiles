@@ -18,16 +18,16 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
+background = #282a36
+background-alt = #44475a
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
-yellow = #ffcc00
-green = #8cff66
+foreground = #f8f8f2
+foreground-alt = #6272a4
+primary = #ff79c6
+secondary =	#bd93f9
+alert =	#ff5555
+yellow = #f1fa8c
+green = #50fa7b
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1-1}
@@ -273,6 +273,7 @@ battery = BAT1
 adapter = ACAD
 full-at = 98
 
+format-charging-prefix = " "
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-charging-foreground = ${colors.yellow}

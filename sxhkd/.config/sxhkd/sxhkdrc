@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+monitors={eDP-1-1,HDMI-1-1}
+
 #
 # wm independent hotkeys
 #
@@ -100,7 +102,18 @@ super + {o,i}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+    bspc {desktop -f,node -d} '^{1-9,10}'
+
+# SEND TO MONITOR
+alt + bracket{left,right}
+    bspc monitor -f {HDMI-1-1,eDP-1-1}
+
+alt + shift + bracket{left,right}
+    bspc node --to-monitor {HDMI-1-1,eDP-1-1}
+
+
+
+
 
 #
 # preselect

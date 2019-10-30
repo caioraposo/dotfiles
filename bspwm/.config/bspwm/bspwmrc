@@ -2,7 +2,7 @@
 
 
 # MONITORS
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 
 unfocused=#3A2F3F
@@ -29,10 +29,10 @@ bspc config single_monocle				false
 
 
 # RULES
-bspc rule -a Nightly desktop=^2
-bspc rule -a firefox desktop=^2
-bspc rule -a firefoxdeveloperedition desktop=^2
-bspc rule -a qutebrowser desktop=^2
+bspc rule -a Nightly desktop=^3
+bspc rule -a firefox desktop=^3
+bspc rule -a firefoxdeveloperedition desktop=^3
+bspc rule -a qutebrowser desktop=^3
 
 bspc rule -a dolphin desktop=^4
 

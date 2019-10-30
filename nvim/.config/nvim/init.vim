@@ -27,7 +27,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 call plug#end()
 
-color gruvbox
+color dracula
 
 let g:airline_powerline_fonts = 1
 
@@ -37,6 +37,7 @@ set nohlsearch
 set clipboard+=unnamedplus
 
 " Some basics
+set termguicolors
 set tabstop=4
 set shiftwidth=4
 set expandtab

@@ -10,8 +10,7 @@ extern=HDMI-1-1
 
 if xrandr | grep "$extern disconnected"; then
     # Use internal monitor
-    xrandr --output "$extern" --off --output "$intern" --auto 
-
+    xrandr --output "$extern" --off --output "$intern" --auto --dpi 75
 else
     # Switch to exernal monitor
     xrandr --output "$intern" --off --output "$extern" --auto --rate 144
@@ -22,6 +21,7 @@ fi
 
 
 # AUTOSTART PROGRAMS
+numlockx on &
 sxhkd -m 1 &
 # feh --bg-scale ~/Pictures/Wallpapers/japan-purple.jpg &
 wal -R

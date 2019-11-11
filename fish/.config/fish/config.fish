@@ -88,3 +88,4 @@ set -g fish_prompt_pwd_dir_length 1
 set -g theme_project_dir_length 1
 set -g theme_nerd_fonts yes
 
+

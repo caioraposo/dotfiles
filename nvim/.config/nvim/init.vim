@@ -70,7 +70,8 @@ nnoremap <S-k> :-tabnext<CR><C-L>
 map <C-o> :FZF<CR>
 let $FZF_DEFAULT_COMMAND = "find -L"
 
-
+" Automatically remove trailing whitespaces
+autocmd BufWritePre * %s/\s\+$//e
 
 set tags=./tags;/
 

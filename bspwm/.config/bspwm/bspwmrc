@@ -48,6 +48,8 @@ bspc rule -a spotify desktop=^6
 
 bspc rule -a '*:libreofficedev' state=tiled
 bspc rule -a '*:soffice' state=tiled
+bspc rule -a Zathura state=tiled
+
 
 
 # FIX JAVA APPLICATIONS COMPACTIBILITY

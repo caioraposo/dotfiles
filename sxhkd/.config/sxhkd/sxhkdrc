@@ -21,6 +21,9 @@ super + f
 super + m
 	$TERMINAL -e cmus
 
+super + n
+    ~/Programs/appimage/Standard-Notes-3.0.23.AppImage
+
 super + @space
 	rofi -show drun
 

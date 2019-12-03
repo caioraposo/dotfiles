@@ -18,6 +18,7 @@ SETUVAR _fish_abbr_gb:git\x20branch
 SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dm\x20\x22
 SETUVAR _fish_abbr_gch:git\x20checkout
 SETUVAR _fish_abbr_gd:git\x20diff
+SETUVAR _fish_abbr_gl:git\x20log
 SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fish_abbr_py:python3
 SETUVAR _fish_abbr_sctl:systemctl
@@ -55,5 +56,5 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/home/caio/\x2ecargo/bin\x1e/home/caio/go/bin\x1e/home/caio/\x2elocal/bin
+SETUVAR fish_user_paths:/usr/local/ncbi/sra\x2dtools/bin\x1e/home/caio/\x2ecargo/bin\x1e/home/caio/go/bin\x1e/home/caio/\x2elocal/bin
 SETUVAR pure_version:2\x2e1\x2e8

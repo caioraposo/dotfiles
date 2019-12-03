@@ -1,3 +1,5 @@
 .netrwhist
 nvim/.config/nvim/autoload/
 nvim/.config/nvim/plugged/
+mypy_cache/
+.vim/

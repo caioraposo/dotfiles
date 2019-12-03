@@ -25,6 +25,7 @@ abbr gc     'git commit -m "'
 abbr gch    "git checkout"
 abbr ga     "git add"
 abbr gd     "git diff"
+abbr gl     "git log"
 abbr sctl   "systemctl"
 
 # OPEN CONIGURATION FILES
@@ -57,10 +58,6 @@ if status is-login
 end
 
 
-# Activate python project virtual environment
-alias poetry_shell='. (dirname (poetry run which python))/activate.fish'
-
-
 # THEME SETTINGS
 set -g theme_display_git yes
 set -g theme_display_git_untracked yes
@@ -89,3 +86,11 @@ set -g theme_project_dir_length 1
 set -g theme_nerd_fonts yes
 
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /home/caio/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+
+# pyenv init
+status --is-interactive; and source (pyenv init -|psub)

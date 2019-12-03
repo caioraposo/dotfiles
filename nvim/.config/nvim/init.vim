@@ -13,6 +13,8 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'dag/vim-fish'
+Plug 'https://github.com/snakemake/snakemake.git', {'rtp': 'misc/vim/'}
+" Wasn't able to clone the stable branch
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'psf/black'
 Plug 'airblade/vim-gitgutter'
@@ -72,6 +74,7 @@ let $FZF_DEFAULT_COMMAND = "find -L"
 
 " Automatically remove trailing whitespaces
 autocmd BufWritePre * %s/\s\+$//e
+au BufWriteCmd *.py write | Black
 
 set tags=./tags;/
 
@@ -221,3 +224,10 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 if &shell =~# 'fish$'
     set shell=sh
 endif
+
+" Snakemake syntax highlighting
+au BufNewFile,BufRead Snakefile set syntax=snakemake
+au BufNewFile,BufRead *.rules set syntax=snakemake
+au BufNewFile,BufRead *.snakefile set syntax=snakemake
+au BufNewFile,BufRead *.snake set syntax=snakemake
+

@@ -10,11 +10,11 @@ Xft.hinting: 1
 XTerm.vt100.faceName: Iosevka Term SS07:size=11:antialias=true
 XTerm.vt100.font: -schumacher-clean-medium-r-normal-*-12-120-75-75-c-*-iso8859-*
 Xft.rgba: rgb
-!Xft.dpi: 96
+Xft.dpi: 96
 XTerm.termName: xterm-256color
 XTerm.vt100.locale: true
 XTerm.vt100.selectToClipboard: true
-Xcursor*theme: capitaine-cursors
+Xcursor*theme: posy-white
 XTerm.scaleHeight: 1.01
 
 URxvt.scrollBar: false

@@ -34,10 +34,11 @@ abbr cfbar 		"nvim ~/.config/polybar/config"
 abbr cff 		"nvim ~/.config/fish/config.fish"
 abbr cfvi 		"nvim ~/.config/nvim/init.vim"
 abbr cfa 		"nvim ~/.config/alacritty/alacritty.yml"
-abbr cfbsp 		"nvim ~/.config/bspwm/bspwmrc"
+abbr cfwm 		"nvim ~/.config/bspwm/bspwmrc"
 abbr cfk 		"nvim ~/.config/sxhkd/sxhkdrc"
 abbr cfr 	    "nvim ~/.config/rofi/.config/rofi/config"
 abbr cflf 		"nvim ~/.config/lf/lfrc"
+abbr cfqb 		"nvim ~/.config/qutebrowser/config.py"
 
 
 alias tcn='mv --force -t ~/.local/share/Trash '

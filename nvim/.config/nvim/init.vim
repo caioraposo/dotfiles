@@ -13,6 +13,8 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'dag/vim-fish'
+Plug 'ptzz/lf.vim'
+Plug 'rbgrouleff/bclose.vim'
 Plug 'https://github.com/snakemake/snakemake.git', {'rtp': 'misc/vim/'}
 " Wasn't able to clone the stable branch
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
@@ -107,6 +109,10 @@ set shortmess+=c
 
 " always show signcolumns
 set signcolumn=yes
+
+" Replace netrw with lf
+let g:NERDTreeHijackNetrw = 0
+let g:lf_replace_netrw = 1
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.

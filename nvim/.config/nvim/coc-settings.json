@@ -86,5 +86,6 @@
         }
     },
     "java.errors.incompleteClasspath.severity": "ignore",
-    "python.jediEnabled": false
+    "python.jediEnabled": false,
+    "suggest.autoTrigger": "trigger"
 }

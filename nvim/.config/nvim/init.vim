@@ -14,8 +14,9 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'dag/vim-fish'
 Plug 'ptzz/lf.vim'
+" Deleting a buffer without closing the window
+" see: https://vim.fandom.com/wiki/Deleting_a_buffer_without_closing_the_window
 Plug 'rbgrouleff/bclose.vim'
-Plug 'https://github.com/snakemake/snakemake.git', {'rtp': 'misc/vim/'}
 " Wasn't able to clone the stable branch
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'psf/black'
@@ -23,17 +24,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'itchyny/vim-gitbranch'
-Plug 'posva/vim-vue'
+Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'tpope/vim-fugitive'
-Plug 'morhetz/gruvbox'
+Plug 'jceb/vim-orgmode'
+Plug 'itchyny/calendar.vim'
 call plug#end()
 
 color dracula
 
-let g:airline_powerline_fonts = 1
 
 set go=a
 set mouse=a
@@ -65,17 +63,24 @@ map <A-j> <C-w>j
 map <A-k> <C-w>k
 map <A-l> <C-w>l
 
+" Disables automatic commenting on newline
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Tab switching like qutebrowser
 nnoremap <S-j> :tabnext<CR><C-L>
 nnoremap <S-k> :-tabnext<CR><C-L>
 
+let g:lightline = {
+      \ 'colorscheme': 'dracula',
+      \ }
 
 map <C-o> :FZF<CR>
 let $FZF_DEFAULT_COMMAND = "find -L"
 
 " Automatically remove trailing whitespaces
 autocmd BufWritePre * %s/\s\+$//e
+
+" Format python files using black
 au BufWriteCmd *.py write | Black
 
 set tags=./tags;/

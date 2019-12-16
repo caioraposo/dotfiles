@@ -36,6 +36,8 @@ super + Escape
 super + End
 	poweroff
 
+super + Next
+    xsecurelock
 
 #
 # bspwm hotkeys

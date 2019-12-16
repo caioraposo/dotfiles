@@ -18,6 +18,7 @@ abbr sp     "sudo pacman"
 abbr sps    "sudo pacman -S"
 abbr ys     "yay -S"
 abbr yss    "yay -Ss"
+abbr yr     "yay -Rns"
 abbr g      "git"
 abbr gs     "git status"
 abbr gb     "git branch"
@@ -87,11 +88,6 @@ set -g theme_project_dir_length 1
 set -g theme_nerd_fonts yes
 
 
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /home/caio/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
 
 # pyenv init
 status --is-interactive; and source (pyenv init -|psub)

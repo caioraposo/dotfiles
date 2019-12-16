@@ -1,12 +1,11 @@
 #!/bin/sh
 
-xrandr --setprovideroutputsource modesetting NVIDIA-0
 
 xrdb -merge ~/.Xresources
 
 
-intern=eDP-1-1
-extern=HDMI-1-1
+intern=eDP-1
+extern=HDMI-1
 
 if xrandr | grep "$extern disconnected"; then
     # Use internal monitor
@@ -23,15 +22,13 @@ fi
 # AUTOSTART PROGRAMS
 numlockx on &
 sxhkd -m 1 &
-# feh --bg-scale ~/Pictures/Wallpapers/japan-purple.jpg &
-wal -R
+feh --bg-scale ~/Pictures/Wallpapers/japan-purple.jpg &
 $HOME/.config/polybar/launch.sh &
 dunst &
-nm-applet &
 fcitx &
-clight &
-# compton &
 blueman-applet &
-# setxkbmap -model pc105 -layout us,us -variant dvorak-intl, -option grp:alt_shift_toggle
+nm-applet &
+clight &
+picom &
 
 exec bspwm

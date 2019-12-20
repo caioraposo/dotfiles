@@ -28,6 +28,11 @@ secondary =	#bd93f9
 alert =	#ff5555
 yellow = #f1fa8c
 green = #50fa7b
+cyan = #8be9fd
+orange = #ffb86c
+pink = #ff79c6
+purple = #bd93f9
+
 
 [bar/default]
 ;monitor = ${env:MONITOR:HDMI-1-1}
@@ -161,7 +166,7 @@ time = "%H:%M"
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.yellow}
+format-underline = ${colors.purple}
 
 label = %date% %time%
 
@@ -234,9 +239,9 @@ format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 format-charging-foreground = ${colors.yellow}
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.green}
-format-full-underline = ${self.format-charging-underline}
+format-full =
+#format-full-prefix-foreground = ${colors.green}
+#format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -285,7 +290,7 @@ interface = wlp2s0
 interval = 3.0
 
 format-connected = 直 <label-connected>
-format-connected-underline = ${colors.foreground-alt}
+format-connected-underline = ${colors.cyan}
 label-connected = %essid%
 
 ;format-disconnected =

@@ -12,6 +12,7 @@ end
 
 # ABBREVIATIONS
 abbr vi	    "nvim"
+abbr svi    "sudo nvim"
 abbr vif    "nvim (fzf)"
 abbr py     "python3"
 abbr sp     "sudo pacman"
@@ -27,7 +28,7 @@ abbr gch    "git checkout"
 abbr ga     "git add"
 abbr gd     "git diff"
 abbr gl     "git log"
-abbr sctl   "systemctl"
+abbr sctl   "sudo systemctl"
 
 # OPEN CONIGURATION FILES
 abbr cfi3 		"nvim ~/.config/i3/config"
@@ -40,6 +41,7 @@ abbr cfk 		"nvim ~/.config/sxhkd/sxhkdrc"
 abbr cfr 	    "nvim ~/.config/rofi/.config/rofi/config"
 abbr cflf 		"nvim ~/.config/lf/lfrc"
 abbr cfqb 		"nvim ~/.config/qutebrowser/config.py"
+abbr initf      "nvim ~/.config/omf/init.fish"
 
 
 alias tcn='mv --force -t ~/.local/share/Trash '

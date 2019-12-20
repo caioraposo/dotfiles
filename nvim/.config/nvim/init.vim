@@ -1,4 +1,5 @@
-let mapleader="\<SPACE>"
+let mapleader=","
+let maplocalleader=","
 
 
 " Automatically install plugins
@@ -17,8 +18,7 @@ Plug 'ptzz/lf.vim'
 " Deleting a buffer without closing the window
 " see: https://vim.fandom.com/wiki/Deleting_a_buffer_without_closing_the_window
 Plug 'rbgrouleff/bclose.vim'
-" Wasn't able to clone the stable branch
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'psf/black'
 Plug 'airblade/vim-gitgutter'
 Plug 'dracula/vim', { 'as': 'dracula' }

@@ -18,21 +18,20 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #282a36
-background-alt = #44475a
+background = #2E3440
+background-alt = #4C566A
 ;foreground = ${xrdb:color7:#222}
-foreground = #f8f8f2
-foreground-alt = #6272a4
-primary = #ff79c6
-secondary =	#bd93f9
-alert =	#ff5555
-yellow = #f1fa8c
-green = #50fa7b
-cyan = #8be9fd
-orange = #ffb86c
-pink = #ff79c6
+foreground = #ECEFF4
+foreground-alt = #D8DEE9
+primary = #8FBCBB
+secondary = #5E81AC
+alert =	#BF616A
+yellow = #EBCB8B
+green = #A3BE8C
+cyan = #88C0D0
+orange = #D08770
+pink = #B48EAD
 purple = #bd93f9
-
 
 [bar/default]
 ;monitor = ${env:MONITOR:HDMI-1-1}
@@ -124,7 +123,7 @@ type = internal/bspwm
 
 pin-workspaces = true
 
-enable-click = true
+enable-click = false
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
@@ -139,7 +138,7 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
 label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
+label-empty-foreground = ${colors.background-alt}
 label-empty-padding = 1
 
 ; Separator in between workspaces

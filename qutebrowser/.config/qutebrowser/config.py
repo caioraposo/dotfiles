@@ -113,6 +113,8 @@ c.fonts.statusbar = f"400 {FONT_SIZE}pt monospace"
 # Type: QtFont
 c.fonts.tabs = f"400 {FONT_SIZE}pt monospace"
 
+c.tabs.background = True
+
 # COLORS
 
 
@@ -180,5 +182,5 @@ c.colors.webpage.bg = "white"
 c.fonts.web.family.serif = "Liberation Serif"
 c.fonts.web.family.sans_serif = "Liberation Sans"
 c.fonts.web.family.standard = "Liberation Sans"
-c.fonts.web.family.fixed = "Fira Code"
+c.fonts.web.family.fixed = "Hack Nerd Font"
 # custom css

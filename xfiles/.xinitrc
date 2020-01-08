@@ -51,12 +51,11 @@ fi
 
 numlockx on &
 sxhkd -m 1 &
-feh --bg-scale ~/Pictures/Wallpapers/japan-purple.jpg &
+feh --bg-scale ~/Pictures/Wallpapers/mountains.jpg &
 $HOME/.config/polybar/launch.sh &
 dunst &
 fcitx &
 blueman-applet &
-clight &
 nm-applet &
 
 exec bspwm

@@ -93,3 +93,6 @@ set -g theme_nerd_fonts yes
 
 # pyenv init
 status --is-interactive; and source (pyenv init -|psub)
+
+eval /home/caio/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+

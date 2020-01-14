@@ -89,7 +89,8 @@ set -g fish_prompt_pwd_dir_length 1
 set -g theme_project_dir_length 1
 set -g theme_nerd_fonts yes
 
-
+set -g pure_symbol_prompt ">"
+set -g pure_symbol_reverse_prompt "<"
 
 # pyenv init
 status --is-interactive; and source (pyenv init -|psub)

@@ -17,56 +17,47 @@ XTerm.vt100.selectToClipboard: true
 Xcursor*theme: posy-white
 XTerm.scaleHeight: 1.01
 
-URxvt.scrollBar: false
-URxvt.internalBorder:  16
-!URxvt*depth: 32
-URxvt.perl-ext-common: default,matcher,resize-font
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-URxvt.matcher.rend.0: Uline Bold fg5
-URxvt*borderless: false
-URxvt.letterSpace: 0
+! Project:    Nord XResources
+! Version:    0.1.0
+! Repository: https://github.com/arcticicestudio/nord-xresources
+! License:    MIT
 
-! Dracula Xresources palette
-!! COLORS
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
 
-! special
-URxvt*foreground:   #bbc5ff
-URxvt*background:   [100]#292d3e
-URxvt*cursorColor:  #bbc5ff
+*.foreground:   nord4
+*.background:   nord0
+*.cursorColor:  nord4
+*fading: 35
+*fadeColor: nord3
 
-XTerm*foreground: #bbc5ff
-XTerm*background: #292d3e
-XTerm*cursorColor: #bbc5ff
-
-! black
-*.color0:       #101010  !! originally #292d3e
-*.color8:       #434758
-
-! red
-*.color1:       #f07178
-*.color9:       #ff8b92
-
-! green
-*.color2:       #c3e88d
-*.color10:      #ddffa7
-
-! yellow
-*.color3:       #ffcb6b
-*.color11:      #ffe585
-
-! blue
-*.color4:       #82aaff
-*.color12:      #9cc4ff
-
-! magenta
-*.color5:       #c792ea
-*.color13:      #e1acff
-
-! cyan
-*.color6:       #89ddff
-*.color14:      #a3f7ff
-
-! white
-*.color7:       #d0d0d0
-*.color15:      #ffffff
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6

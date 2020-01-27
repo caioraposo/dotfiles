@@ -51,7 +51,7 @@ fi
 
 numlockx on &
 sxhkd -m 1 &
-feh --bg-scale ~/Pictures/Wallpapers/mountains.jpg &
+feh --bg-scale ~/Pictures/Wallpapers/nord.png &
 $HOME/.config/polybar/launch.sh &
 dunst &
 fcitx &

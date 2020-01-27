@@ -38,7 +38,7 @@ abbr cfvi 		"nvim ~/.config/nvim/init.vim"
 abbr cfa 		"nvim ~/.config/alacritty/alacritty.yml"
 abbr cfwm 		"nvim ~/.config/bspwm/bspwmrc"
 abbr cfk 		"nvim ~/.config/sxhkd/sxhkdrc"
-abbr cfr 	    "nvim ~/.config/rofi/.config/rofi/config"
+abbr cfr 	    "nvim ~/.config/rofi/config"
 abbr cflf 		"nvim ~/.config/lf/lfrc"
 abbr cfqb 		"nvim ~/.config/qutebrowser/config.py"
 abbr initf      "nvim ~/.config/omf/init.fish"
@@ -89,8 +89,6 @@ set -g fish_prompt_pwd_dir_length 1
 set -g theme_project_dir_length 1
 set -g theme_nerd_fonts yes
 
-set -g pure_symbol_prompt ">"
-set -g pure_symbol_reverse_prompt "<"
 
 # pyenv init
 status --is-interactive; and source (pyenv init -|psub)

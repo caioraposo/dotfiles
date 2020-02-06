@@ -1,14 +1,12 @@
 import subprocess
 
 
-FONT_SIZE = 11
+FONT_SIZE = 14
 
 
 # Uncomment this to still load settings configured via autoconfig.yml
 # config.load_autoconfig()
 
-# Always restore open sites when qutebrowser is reopened.
-# Type: Bool
 c.auto_save.session = True
 
 

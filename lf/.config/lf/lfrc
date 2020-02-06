@@ -113,7 +113,7 @@ cmd zip ${{
 
 
 # enable icons
-set icons
+# set icons
 
 # show hidden files
 # set hidden

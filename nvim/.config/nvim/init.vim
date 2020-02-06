@@ -17,21 +17,22 @@ Plug 'dag/vim-fish'
 " see: https://vim.fandom.com/wiki/Deleting_a_buffer_without_closing_the_window
 Plug 'rbgrouleff/bclose.vim'
 Plug 'psf/black'
-Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'jceb/vim-orgmode'
-Plug 'itchyny/calendar.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim', { 'name': 'dracula' }
+Plug 'morhetz/gruvbox'
 call plug#end()
 
-color nord
+let g:gruvbox_italic=1
+
+color gruvbox
 
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'gruvbox',
       \ }
 
 set go=a

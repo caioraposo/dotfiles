@@ -51,10 +51,9 @@ fi
 
 numlockx on &
 sxhkd -m 1 &
-feh --bg-scale ~/Pictures/Wallpapers/nord.png &
+feh --bg-scale ~/Pictures/Wallpapers/view.jpg &
 $HOME/.config/polybar/launch.sh &
 dunst &
-fcitx &
 blueman-applet &
 nm-applet &
 

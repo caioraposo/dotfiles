@@ -15,18 +15,6 @@
             "rootPatterns": [".ccls", "compile_commands.json", ".hg/"],
             "trace.server": "off"
         },
-        "dart": {
-            "enable": true,
-            "command": "dart_language_server",
-            "filetypes": ["dart"],
-            "trace.server": "off",
-            "settings": {
-                "dart": {
-                    "validation": {},
-                    "completion": {}
-                }
-            }
-        },
         "python": {
             "enable": true,
             "command": "python",
@@ -52,7 +40,7 @@
                             "enabled": true
                         },
                         "pylint": {
-                            "enabled": false
+                            "enabled": true
                         }
                     }
                 }
@@ -85,7 +73,5 @@
             }
         }
     },
-    "java.errors.incompleteClasspath.severity": "ignore",
-    "python.jediEnabled": false,
-    "suggest.autoTrigger": "trigger"
+    "python.jediEnabled": false
 }

@@ -6,7 +6,7 @@ window:
     x: 0
     y: 0
   # Spread additional padding evenly around the terminal content.
-  dynamic_padding: false
+  dynamic_padding: true
   decorations: full
   startup_mode: Maximized
 
@@ -15,11 +15,11 @@ scrolling:
   multiplier: 3
   auto_scroll: false
 
-tabspaces: 4
+tabspaces: 8
 
 font:
   normal:
-    family: Hack
+    family: JetBrains Mono Medium
   size: 14.0
   offset:
     x: 0

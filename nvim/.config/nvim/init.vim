@@ -12,28 +12,21 @@ endif
 
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'dag/vim-fish'
 " Deleting a buffer without closing the window
 " see: https://vim.fandom.com/wiki/Deleting_a_buffer_without_closing_the_window
 Plug 'rbgrouleff/bclose.vim'
 Plug 'psf/black'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
-Plug 'itchyny/lightline.vim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'rust-lang/rust.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'dracula/vim', { 'name': 'dracula' }
-Plug 'morhetz/gruvbox'
+Plug 'itchyny/calendar.vim'
 call plug#end()
 
 let g:gruvbox_italic=1
 
-color gruvbox
+color nofrils-dark
 
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ }
 
 set go=a
 set mouse=a
@@ -54,6 +47,7 @@ set hidden
 set showcmd
 set hlsearch
 set noshowmode
+set autowrite
 
 " Automatically read when a file is changed outside of Vim
 set autoread
@@ -70,6 +64,16 @@ map <C-l> <C-w>l
 
 " Disables automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+"
+nmap <silent>  ;v  :next $MYVIMRC<CR>
+
+augroup VimReload
+    autocmd!
+    autocmd BufWritePost  $MYVIMRC  source $MYVIMRC
+augroup END
+
+nmap <silent> <BS>  :nohlsearch<CR>
 
 " Tab switching like qutebrowser
 nnoremap <S-j> :tabnext<CR><C-L>

@@ -1,2 +1,2 @@
-rofi.theme: nord
-rofi.font: Hack Nerd Font 14
+rofi.theme: gruvbox-dark
+rofi.font: JetBrains Mono Medium 14

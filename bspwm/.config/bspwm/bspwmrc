@@ -43,4 +43,4 @@ bspc rule -a Zathura state=fullscreen
 
 
 # FIX JAVA APPLICATIONS COMPACTIBILITY
-#wmname LG3D &
+wmname LG3D &

@@ -51,7 +51,7 @@ fi
 
 numlockx on &
 sxhkd -m 1 &
-feh --bg-scale ~/Pictures/Wallpapers/view.jpg &
+feh --bg-scale ~/Pictures/Wallpapers/cyberpunk-gruvbox.jpg &
 $HOME/.config/polybar/launch.sh &
 dunst &
 blueman-applet &

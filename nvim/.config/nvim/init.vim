@@ -21,12 +21,17 @@ Plug 'tpope/vim-surround'
 Plug 'rust-lang/rust.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/calendar.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 let g:gruvbox_italic=1
 
-color nofrils-dark
+color nord
 
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
 
 set go=a
 set mouse=a

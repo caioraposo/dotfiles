@@ -40,7 +40,9 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-# start some nice programs
+# Configure keyboard layout
+setxkbmap br,us -variant dvorak, -option grp:alt_shift_toggle,caps:swapescape
+
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
@@ -49,9 +51,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# Start some nice programs
+
 numlockx on &
 sxhkd -m 1 &
-feh --bg-scale ~/Pictures/Wallpapers/cyberpunk-gruvbox.jpg &
+feh --bg-scale ~/Pictures/Wallpapers/shinobu.jpg &
 $HOME/.config/polybar/launch.sh &
 dunst &
 blueman-applet &

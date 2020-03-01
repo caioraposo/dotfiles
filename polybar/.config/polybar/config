@@ -18,34 +18,34 @@
 
 [colors]
 ; Nord
-;background = #2E3440
-;background-alt = #4C566A
-;foreground = #ECEFF4
-;foreground-alt = #D8DEE9
-;primary = #8FBCBB
-;secondary = #5E81AC
-;alert =	#BF616A
-;yellow = #EBCB8B
-;green = #A3BE8C
-;cyan = #88C0D0
-;orange = #D08770
-;pink = #B48EAD
-;purple = #bd93f9
+background = #2E3440
+background-alt = #4C566A
+foreground = #ECEFF4
+foreground-alt = #D8DEE9
+primary = #8FBCBB
+secondary = #5E81AC
+alert =	#BF616A
+yellow = #EBCB8B
+green = #A3BE8C
+cyan = #88C0D0
+orange = #D08770
+pink = #B48EAD
+purple = #bd93f9
 
 ; Gruvbox
-background = #282828
-background-alt = #928374
-foreground = #ebdbb2
-foreground-alt = #fbf1c7
-primary = #458588
-secondary = #98971a
-alert =	#cc241d
-yellow = #d79921
-green = #98971a
-cyan = #679d6a
-orange = #fe8019
-pink = #d3869b
-purple = #b16286
+;background = #282828
+;background-alt = #928374
+;foreground = #ebdbb2
+;foreground-alt = #fbf1c7
+;primary = #458588
+;secondary = #98971a
+;alert =	#cc241d
+;yellow = #d79921
+;green = #98971a
+;cyan = #679d6a
+;orange = #fe8019
+;pink = #d3869b
+;purple = #b16286
 
 
 [bar/default]

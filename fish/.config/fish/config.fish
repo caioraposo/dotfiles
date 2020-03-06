@@ -8,12 +8,12 @@ end
 
 # ABBREVIATIONS
 abbr vi	    "nvim"
-abbr svi    "sudo nvim"
+abbr dvi    "doas nvim"
 abbr vif    "nvim (fzf)"
 abbr py     "python3"
-abbr sp     "sudo pacman"
-abbr sps    "sudo pacman -S"
-abbr ys     "yay -S"
+abbr dp     "doas pacman"
+abbr dps    "doas pacman -Syu"
+abbr ys     "yay -Syu"
 abbr yss    "yay -Ss"
 abbr yr     "yay -Rns"
 abbr g      "git"
@@ -24,7 +24,7 @@ abbr gch    "git checkout"
 abbr ga     "git add"
 abbr gd     "git diff"
 abbr gl     "git log"
-abbr sctl   "sudo systemctl"
+abbr dctl   "doas systemctl"
 
 # OPEN CONIGURATION FILES
 abbr cfi3 		"nvim ~/.config/i3/config"

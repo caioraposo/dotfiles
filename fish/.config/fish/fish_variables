@@ -3,6 +3,7 @@
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
+SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_cfa:nvim\x20\x7e/\x2econfig/alacritty/alacritty\x2eyml
 SETUVAR _fish_abbr_cfbar:nvim\x20\x7e/\x2econfig/polybar/config
 SETUVAR _fish_abbr_cfbsp:nvim\x20\x7e/\x2econfig/bspwm/bspwmrc
@@ -15,6 +16,10 @@ SETUVAR _fish_abbr_cfqb:nvim\x20\x7e/\x2econfig/qutebrowser/config\x2epy
 SETUVAR _fish_abbr_cfr:nvim\x20\x7e/\x2econfig/rofi/config
 SETUVAR _fish_abbr_cfvi:nvim\x20\x7e/\x2econfig/nvim/init\x2evim
 SETUVAR _fish_abbr_cfwm:nvim\x20\x7e/\x2econfig/bspwm/bspwmrc
+SETUVAR _fish_abbr_dctl:doas\x20systemctl
+SETUVAR _fish_abbr_dp:doas\x20pacman
+SETUVAR _fish_abbr_dps:doas\x20pacman\x20\x2dSyu
+SETUVAR _fish_abbr_dvi:doas\x20nvim
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gb:git\x20branch
@@ -25,15 +30,15 @@ SETUVAR _fish_abbr_gl:git\x20log
 SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fish_abbr_initf:nvim\x20\x7e/\x2econfig/omf/init\x2efish
 SETUVAR _fish_abbr_py:python3
-SETUVAR _fish_abbr_sctl:sudo\x20systemctl
-SETUVAR _fish_abbr_sp:sudo\x20pacman
-SETUVAR _fish_abbr_sps:sudo\x20pacman\x20\x2dS
-SETUVAR _fish_abbr_svi:sudo\x20nvim
+SETUVAR _fish_abbr_sctl:doas\x20systemctl
+SETUVAR _fish_abbr_sp:doas\x20pacman
+SETUVAR _fish_abbr_sps:doas\x20pacman\x20\x2dSyu
+SETUVAR _fish_abbr_svi:doas\x20nvim
 SETUVAR _fish_abbr_vi:nvim
 SETUVAR _fish_abbr_vif:nvim\x20\x28fzf\x29
 SETUVAR _fish_abbr_vifzf:nvim\x20\x28fzf\x29
 SETUVAR _fish_abbr_yr:yay\x20\x2dRns
-SETUVAR _fish_abbr_ys:yay\x20\x2dS
+SETUVAR _fish_abbr_ys:yay\x20\x2dSyu
 SETUVAR _fish_abbr_yss:yay\x20\x2dSs
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
@@ -46,6 +51,7 @@ SETUVAR fish_color_error:ff0000
 SETUVAR fish_color_escape:00a6b2
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
 SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
 SETUVAR fish_color_normal:normal
 SETUVAR fish_color_operator:00a6b2
@@ -54,6 +60,7 @@ SETUVAR fish_color_quote:999900
 SETUVAR fish_color_redirection:00afff
 SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell\x0aType\x20\x60help\x60\x20for\x20instructions\x20on\x20how\x20to\x20use\x20fish

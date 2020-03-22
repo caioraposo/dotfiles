@@ -9,8 +9,8 @@ c.tabs.indicator.width = 0
 c.url.searchengines = {"DEFAULT": "https://duckduckgo.com/?q={}"}
 c.url.start_pages = "https://start.duckduckgo.com"
 
-c.fonts.default_family = "Hack"
-c.fonts.default_size = "14pt"
+c.fonts.default_family = "mono"
+c.fonts.default_size = "12pt"
 
 c.tabs.background = True
 

@@ -15,14 +15,13 @@ call plug#begin('~/.config/nvim/plugged')
 " Deleting a buffer without closing the window
 " see: https://vim.fandom.com/wiki/Deleting_a_buffer_without_closing_the_window
 Plug 'rbgrouleff/bclose.vim'
-Plug 'psf/black'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'rust-lang/rust.vim'
-Plug 'arcticicestudio/nord-vim'
+Plug 'psf/black', { 'tag': '19.10b0' }
 Plug 'itchyny/calendar.vim'
-Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 let g:gruvbox_italic=1
@@ -39,6 +38,7 @@ set nohlsearch
 set clipboard+=unnamedplus
 
 " Some basics
+set colorcolumn=80
 set termguicolors
 set tabstop=4
 set shiftwidth=4
@@ -53,6 +53,7 @@ set showcmd
 set hlsearch
 set noshowmode
 set autowrite
+
 
 " Automatically read when a file is changed outside of Vim
 set autoread
@@ -70,9 +71,9 @@ map <C-l> <C-w>l
 " Disables automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-"
 nmap <silent>  ;v  :next $MYVIMRC<CR>
 
+" Auto reload init.vim
 augroup VimReload
     autocmd!
     autocmd BufWritePost  $MYVIMRC  source $MYVIMRC
@@ -90,8 +91,12 @@ let $FZF_DEFAULT_COMMAND = "find -L"
 " Rust
 let g:rustfmt_autosave = 1
 
-" Format python files using black
+" Python
+let g:python3_host_prog = "~/.pyenv/versions/pynvim-3.8.1/bin/python3"
 au BufWritePre *.py execute | Black
+if !exists("g:black_linelength")
+  let g:black_linelength = 80
+endif
 
 " Automatically remove trailing whitespaces
 autocmd BufWritePre * %s/\s\+$//e

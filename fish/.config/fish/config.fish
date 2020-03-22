@@ -8,11 +8,10 @@ end
 
 # ABBREVIATIONS
 abbr vi	    "nvim"
-abbr dvi    "doas nvim"
+abbr svi    "sudo nvim"
 abbr vif    "nvim (fzf)"
 abbr py     "python3"
-abbr dp     "doas pacman"
-abbr dps    "doas pacman -Syu"
+abbr sp     "sudo pacman"
 abbr ys     "yay -Syu"
 abbr yss    "yay -Ss"
 abbr yr     "yay -Rns"
@@ -24,7 +23,7 @@ abbr gch    "git checkout"
 abbr ga     "git add"
 abbr gd     "git diff"
 abbr gl     "git log"
-abbr dctl   "doas systemctl"
+abbr sctl   "sudo systemctl"
 
 # OPEN CONIGURATION FILES
 abbr cfi3 		"nvim ~/.config/i3/config"
@@ -37,7 +36,6 @@ abbr cfk 		"nvim ~/.config/sxhkd/sxhkdrc"
 abbr cfr 	    "nvim ~/.config/rofi/config"
 abbr cflf 		"nvim ~/.config/lf/lfrc"
 abbr cfqb 		"nvim ~/.config/qutebrowser/config.py"
-abbr cfion 		"nvim ~/.config/ion/initrc"
 abbr initf      "nvim ~/.config/omf/init.fish"
 
 

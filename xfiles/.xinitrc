@@ -1,10 +1,8 @@
 #!/bin/sh
 
 
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-
-intern=eDP-1-1
-extern=HDMI-1-1
+intern=eDP1
+extern=HDMI1
 
 if xrandr | grep "$extern disconnected"; then
     # Use internal monitor
@@ -55,10 +53,8 @@ fi
 
 numlockx on &
 sxhkd -m 1 &
-feh --bg-scale ~/Pictures/Wallpapers/shinobu.jpg &
+feh --bg-scale ~/.config/wallpaper.png &
 $HOME/.config/polybar/launch.sh &
 dunst &
-blueman-applet &
-nm-applet &
 
 exec bspwm

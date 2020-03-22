@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  content.register_protocol_handler:
-    https://mail.tutanota.com#url=%25s: true
+  content.notifications:
+    https://www.reddit.com: true

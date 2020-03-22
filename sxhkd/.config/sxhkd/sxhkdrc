@@ -1,43 +1,34 @@
 #!/usr/bin/env sh
 
-monitors={eDP-1-1,HDMI-1-1}
-
-#
-# wm independent hotkeys
-#
 
 super + Return
 	$TERMINAL
-
 super + b
 	$BROWSER
-
-super + r
-	$TERMINAL -e ranger
-
 super + f
     $TERMINAL -e lf
-
 super + m
 	$TERMINAL -e cmus
-
 super + s
     tdrop -ma -w -4 alacritty
-
 super + @space
 	rofi -show drun
-
 super + shift + @space
 	rofi -show run
-
 super + Escape
 	pkill -USR1 -x sxhkd
-
 super + End
 	poweroff
-
 super + Next
     xsecurelock
+super + alt + h
+    zathura ~/Documents/HORARIO_DE_AULA.pdf
+# Take screenshot
+Print
+	maim pic-full-$(date '+%y%m%d-%H%M-%S').png
+# Pick screenshot type
+shift + Print
+	maimpick
 
 #
 # bspwm hotkeys
@@ -116,10 +107,6 @@ super + bracket{left,right}
 super + shift + bracket{left,right}
     bspc node --to-monitor {HDMI-1-1,eDP-1-1}
 
-
-
-
-
 #
 # preselect
 #
@@ -161,31 +148,21 @@ super + {Left,Down,Up,Right}
 
 XF86AudioRaiseVolume
 	pamixer -i 10
-
 XF86AudioLowerVolume
 	pamixer -d 10
-
 XF86AudioMute
 	pamixer -t
-
 XF86MonBrightnessUp
 	light -A 5
-
 XF86MonBrightnessDown
 	light -U 5
-
 XF86TouchpadToggle
 	/some/path/toggletouchpad.sh # toggle touchpad
-
 XF86AudioPlay
 	playerclt play
-
 XF86AudioPause
 	playerctl pause
-
 XF86AudioNext
 	playerctl next
-
 XF86AudioPrev
 	playerctl previous
-

@@ -1,6 +1,6 @@
 # My default programs
 set -xg TERMINAL alacritty
-set -xg BROWSER firefox-developer-edition
+set -xg BROWSER qutebrowser
 set -xg EDITOR nvim
 set -xg FM lf
 set -xg READER zathura

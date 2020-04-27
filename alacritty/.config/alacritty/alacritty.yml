@@ -16,13 +16,10 @@ window:
 scrolling:
   history: 10000
   multiplier: 3
-  auto_scroll: false
-
-tabspaces: 8
 
 font:
   normal:
-    family: JetBrains Mono Medium
+    family: JetBrains Mono
   size: 14.0
   offset:
     x: 0

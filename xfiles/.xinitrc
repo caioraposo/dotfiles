@@ -1,15 +1,17 @@
 #!/bin/sh
 
 
-intern=eDP1
-extern=HDMI1
+intern=eDP-1
+extern=HDMI-1
 
 if xrandr | grep "$extern disconnected"; then
     # Use internal monitor
     xrandr --output "$extern" --off --output "$intern" --auto --dpi 75
+    xrandr --output $intern
 else
     # Switch to exernal monitor
     xrandr --output "$intern" --off --output "$extern" --auto --rate 144
+    xrandr --output $extern
 fi
 
 
@@ -53,8 +55,11 @@ fi
 
 numlockx on &
 sxhkd -m 1 &
+ibus-daemon --xim -d &
 feh --bg-scale ~/.config/wallpaper.png &
 $HOME/.config/polybar/launch.sh &
 dunst &
+# Belém coordinates
+xflux -l -1.455755 -g -48.490180 &
 
 exec bspwm

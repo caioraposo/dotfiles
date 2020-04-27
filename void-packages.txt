@@ -1,0 +1,15 @@
+xorg
+bspwm
+sxhkd
+fish-shell
+rofi
+neovim
+dunst
+alacritty
+lf
+zathura
+polybar
+fzf
+cmus
+cmus-opus
+firefox

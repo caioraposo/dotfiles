@@ -40,7 +40,6 @@ screenchange-reload = true
 [bar/default]
 width = 100%
 height = 30
-bottom = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 font-0 = JetBrainsMono Medium:pixelsize=11;1
@@ -118,30 +117,12 @@ date = %a %d. %b%
 
 [module/pulseaudio]
 type = internal/pulseaudio
-
 format-volume = 墳 <label-volume>
 label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
-
 label-muted =  muted
 label-muted-foreground = #666
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
@@ -149,7 +130,7 @@ battery = BAT1
 adapter = ACAD
 full-at = 98
 
-format-charging-prefix = " "
+format-charging-prefix = "  "
 format-charging = <animation-charging> <label-charging>
 
 format-discharging = <ramp-capacity> <label-discharging>
@@ -171,12 +152,12 @@ animation-charging-framerate = 750
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface = wlan0
 interval = 3.0
 format-connected = 直 <label-connected>
 label-connected = %essid%
 format-disconnected = <label-disconnected>
-label-disconnected = 睊no wifi
+label-disconnected = 睊 no wifi
 label-disconnected-foreground = ${colors.secondary}
 
 ; <ramp-signal>

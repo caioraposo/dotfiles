@@ -10,21 +10,23 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 	autocmd VimEnter * PlugInstall
 endif
 
-
 call plug#begin('~/.config/nvim/plugged')
 " Deleting a buffer without closing the window
 " see: https://vim.fandom.com/wiki/Deleting_a_buffer_without_closing_the_window
 Plug 'rbgrouleff/bclose.vim'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
 Plug 'tpope/vim-surround'
 Plug 'rust-lang/rust.vim'
 Plug 'psf/black', { 'tag': '19.10b0' }
-Plug 'itchyny/calendar.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'dag/vim-fish'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
-let g:gruvbox_italic=1
+let g:nord_italic = 1
+let g:nord_underline = 1
 
 color nord
 
@@ -55,7 +57,7 @@ set noshowmode
 set autowrite
 
 
-" Automatically read when a file is changed outside of Vim
+" Automatically read when a filors go overboard, Ie is changed outside of Vim
 set autoread
 
 " Split like a decent WM
@@ -69,7 +71,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Disables automatic commenting on newline
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+"autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 nmap <silent>  ;v  :next $MYVIMRC<CR>
 
@@ -86,13 +88,14 @@ nnoremap <S-j> :tabnext<CR><C-L>
 nnoremap <S-k> :-tabnext<CR><C-L>
 
 map <C-o> :FZF<CR>
-let $FZF_DEFAULT_COMMAND = "find -L"
+" Use ripgrep in :FZF it ignores .git and .gitignore
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 
 " Rust
 let g:rustfmt_autosave = 1
 
 " Python
-let g:python3_host_prog = "~/.pyenv/versions/pynvim-3.8.1/bin/python3"
+let g:python3_host_prog = "~/.local/share/pyenv/versions/nvim-3.8/bin/python3"
 au BufWritePre *.py execute | Black
 if !exists("g:black_linelength")
   let g:black_linelength = 80

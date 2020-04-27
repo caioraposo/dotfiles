@@ -18,17 +18,16 @@ super + shift + @space
 super + Escape
 	pkill -USR1 -x sxhkd
 super + End
-	poweroff
+    doas poweroff
 super + Next
     xsecurelock
 super + alt + h
     zathura ~/Documents/HORARIO_DE_AULA.pdf
-# Take screenshot
-Print
-	maim pic-full-$(date '+%y%m%d-%H%M-%S').png
+F9
+    maim ~/Pictures/Screenshots/$(date '+%y%m%d-%H%M-%S').png
 # Pick screenshot type
-shift + Print
-	maimpick
+shift + F9
+    maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 
 #
 # bspwm hotkeys
@@ -147,11 +146,11 @@ super + {Left,Down,Up,Right}
 # MULTIMIDIA
 
 XF86AudioRaiseVolume
-	pamixer -i 10
+    amixer -q sset Master 5%+
 XF86AudioLowerVolume
-	pamixer -d 10
+    amixer -q sset Master 5%-
 XF86AudioMute
-	pamixer -t
+    amixer -q sset Master toggle
 XF86MonBrightnessUp
 	light -A 5
 XF86MonBrightnessDown

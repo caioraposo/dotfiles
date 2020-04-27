@@ -31,7 +31,7 @@ bspc config focus_follows_pointer		true
 # RULES
 bspc rule -a Steam desktop=^1
 bspc rule -a qutebrowser desktop=^3
-bspc rule -a firefoxdeveloperedition desktop=^3
+bspc rule -a Firefox desktop=^3
 bspc rule -a "Gimp-2.10:gimp-2.10" desktop=^4 follow=on
 bspc rule -a Inkscape desktop=^4
 bspc rule -a krita desktop=^4
@@ -40,6 +40,7 @@ bspc rule -a discord desktop=^5
 bspc rule -a '*:libreofficedev' state=tiled
 bspc rule -a '*:soffice' state=tiled
 bspc rule -a Zathura state=fullscreen
+bspc rule -a Yad state=floating
 
 
 

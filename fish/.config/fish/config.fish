@@ -7,12 +7,8 @@ end
 function fish_mode_prompt
 end
 
-# Load profile and abbreviations
-. ~/.config/fish/profile.fish
 . ~/.config/fish/abbreviations.fish
-
-# Open file manager while in insert vi mode
-bind --mode insert \co $FILE
+. ~/.config/fish/profile.fish
 
 # Start X at login
 if status is-login

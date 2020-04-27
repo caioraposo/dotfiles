@@ -21,7 +21,7 @@ config.set("content.javascript.enabled", True, "qute://*/*")
 
 
 # web fonts
-# c.fonts.web.family.serif = "Liberation Serif"
-# c.fonts.web.family.sans_serif = "Liberation Sans"
-# c.fonts.web.family.standard = "Liberation Sans"
-# c.fonts.web.family.fixed = "Hack"
+c.fonts.web.family.serif = "Liberation Serif"
+c.fonts.web.family.sans_serif = "Liberation Sans"
+c.fonts.web.family.standard = "Liberation Sans"
+c.fonts.web.family.fixed = "Hack"

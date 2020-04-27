@@ -1,15 +1,14 @@
-#!/usr/bin/fish
 # Profile file. Runs on login. Environmental variables are set here.
 
-# Adds `~/.local/bin` to $PATH
 export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$HOME/.local/share/cargo/bin:$PATH"
 export PATH="$HOME/.local/share/pyenv/bin:$PATH"
+export PATH="$HOME/.local/share/Discord:$PATH"
 
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="alacritty"
-export BROWSER="qutebrowser"
+export BROWSER="firefox"
 export READER="zathura"
 export FILE="lf"
 
@@ -33,3 +32,7 @@ export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export GOPATH="$XDG_DATA_HOME/go"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export IBUS_MOZC_DEFAULT_HIRAGANA=" ibus-daemon --xim -d"
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus

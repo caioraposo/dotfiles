@@ -1,18 +1,7 @@
 #!/bin/sh
 
 
-intern=eDP-1
-extern=HDMI-1
-
-if xrandr | grep "$extern disconnected"; then
-    # Use internal monitor
-    xrandr --output "$extern" --off --output "$intern" --auto --dpi 75
-    xrandr --output $intern
-else
-    # Switch to exernal monitor
-    xrandr --output "$intern" --off --output "$extern" --auto --rate 144
-    xrandr --output $extern
-fi
+xrandr --output DisplayPort-1 --mode 1980x1080 --rate 144
 
 
 [ -f "$HOME/.xprofile" ] && . ~/.xprofile
@@ -59,7 +48,6 @@ ibus-daemon --xim -d &
 feh --bg-scale ~/.config/wallpaper.png &
 $HOME/.config/polybar/launch.sh &
 dunst &
-# Belém coordinates
-xflux -l -1.455755 -g -48.490180 &
+xflux -l -1.455755 -g -48.490180 & # Belém coordinates
 
 exec bspwm

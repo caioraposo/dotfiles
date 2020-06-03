@@ -1,4 +1,5 @@
 xorg
+socklog-void
 bspwm
 sxhkd
 fish-shell
@@ -12,4 +13,20 @@ polybar
 fzf
 cmus
 cmus-opus
+cmus-pulseaudio
 firefox
+mpv
+pulseaudio
+pulsemixer
+cronie
+curl
+git
+rustup
+telegram-desktop
+opendoas
+exa
+fd
+ripgrep
+numlockx
+neofetch
+pfetch

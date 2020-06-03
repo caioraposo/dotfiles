@@ -117,7 +117,7 @@ cmd zip ${{
 
 # show hidden files
 # set hidden
-
+map - $~/.config/lf/draw_img.sh $f
 
 # show progress bar
 cmd paste &{{

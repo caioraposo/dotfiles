@@ -101,6 +101,15 @@ if !exists("g:black_linelength")
   let g:black_linelength = 80
 endif
 
+" Compile document LaTeX
+map <leader>c :w! \| !pdflatex <c-r>%<CR>
+
+" Open corresponding .pdf/.html or preview
+map <leader>p :!opout <c-r>%<CR><CR>
+
+" Runs a script that cleans out tex build files whenever I close out of a .tex file.
+autocmd VimLeave *.tex !texclear %
+
 " Automatically remove trailing whitespaces
 autocmd BufWritePre * %s/\s\+$//e
 

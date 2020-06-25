@@ -21,6 +21,7 @@ pulsemixer
 cronie
 curl
 git
+gnupg
 rustup
 telegram-desktop
 opendoas
@@ -30,3 +31,6 @@ ripgrep
 numlockx
 neofetch
 pfetch
+texlive-bin
+tlmgr
+calcurse

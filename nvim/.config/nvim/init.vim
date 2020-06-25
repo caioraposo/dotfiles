@@ -40,7 +40,7 @@ set nohlsearch
 set clipboard+=unnamedplus
 
 " Some basics
-set colorcolumn=80
+set colorcolumn=100
 set termguicolors
 set tabstop=4
 set shiftwidth=4
@@ -95,10 +95,10 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 let g:rustfmt_autosave = 1
 
 " Python
-let g:python3_host_prog = "~/.local/share/pyenv/versions/nvim-3.8/bin/python3"
+let g:python3_host_prog = "~/.local/share/pyenv/versions/nvim-3.8/bin/python"
 au BufWritePre *.py execute | Black
 if !exists("g:black_linelength")
-  let g:black_linelength = 80
+  let g:black_linelength = 100
 endif
 
 " Compile document LaTeX

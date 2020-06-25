@@ -6,7 +6,7 @@ Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 
-Xcursor.theme: posy-white-tiny
+Xcursor.theme: posy-white
 
 #define nord0 #2E3440
 #define nord1 #3B4252

@@ -9,10 +9,6 @@
 ;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 ;
 ;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
-;
-;   The README contains alot of information
 ;
 ;==========================================================
 
@@ -43,7 +39,7 @@ height = 30
 background = ${colors.background}
 foreground = ${colors.foreground}
 font-0 = JetBrainsMono Medium:pixelsize=11;1
-font-1 = Go Mono Nerd Font:size=11;1
+font-1 = Hack Nerd Font:size=11;1
 wm-restack = bspwm
 modules-left = bspwm title
 modules-right = xkeyboard pulseaudio wlan eth battery date time
@@ -170,7 +166,7 @@ ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
-interface = enp3s0
+interface = enp8s0
 interval = 3.0
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground}

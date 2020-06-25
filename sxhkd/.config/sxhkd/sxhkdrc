@@ -7,6 +7,8 @@ super + b
 	$BROWSER
 super + f
     $TERMINAL -e lf
+super + c
+    $TERMINAL -e calcurse
 super + m
 	$TERMINAL -e cmus
 super + s
@@ -23,10 +25,10 @@ super + Next
     xsecurelock
 super + alt + h
     zathura ~/Documents/HORARIO_DE_AULA.pdf
-F9
+Print
     maim ~/Pictures/Screenshots/$(date '+%y%m%d-%H%M-%S').png
 # Pick screenshot type
-shift + F9
+shift + Print
     maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 
 #
@@ -78,7 +80,7 @@ super + shift + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
-super + {_,shift + }c
+super + {_,shift + }r
 	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
@@ -146,11 +148,14 @@ super + {Left,Down,Up,Right}
 # MULTIMIDIA
 
 XF86AudioRaiseVolume
-    amixer -q sset Master 5%+
+    pulsemixer --change-volume +5
+    #amixer -q sset Master 5%+
 XF86AudioLowerVolume
-    amixer -q sset Master 5%-
+    pulsemixer --change-volume -5
+    #amixer -q sset Master 5%-
 XF86AudioMute
-    amixer -q sset Master toggle
+    pulsemixer --toggle-mute
+    #amixer -q sset Master toggle
 XF86MonBrightnessUp
 	light -A 5
 XF86MonBrightnessDown

@@ -8,9 +8,10 @@ export PATH="$HOME/.local/share/Discord:$PATH"
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="alacritty"
-export BROWSER="firefox"
+export BROWSER="qutebrowser"
 export READER="zathura"
-export FILE="lf"
+export FM="lf"
+export CALENDAR="calcurse"
 
 # Other program settings:
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"

@@ -13,9 +13,9 @@ abbr ga     "git add"
 abbr gd     "git diff"
 abbr gl     "git log"
 
-abbr xi     "doas xbps-install -Su"
-abbr xr     "doas xbps-remove -R"
-abbr xq     "xbps-query -Rs"
+abbr xbpsi     "doas xbps-install -S"
+abbr xbpsr     "doas xbps-remove -R"
+abbr xbpsq     "xbps-query -Rs"
 
 # OPEN CONIGURATION FILES
 abbr cfi3 	"nvim ~/.config/i3/config"

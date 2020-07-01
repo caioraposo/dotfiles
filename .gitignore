@@ -1,6 +1,6 @@
 .netrwhist
-nvim/.config/nvim/autoload/
-nvim/.config/nvim/plugged/
+config/nvim/autoload/
+config/nvim/plugged/
 mypy_cache/
 .vim/
-qutebrowser/.config/qutebrowser/bookmarks/urls
+config/qutebrowser/bookmarks/urls

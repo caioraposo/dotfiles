@@ -6,7 +6,7 @@ export PATH="$HOME/.local/share/pyenv/bin:$PATH"
 export PATH="$HOME/.local/share/Discord:$PATH"
 
 # Default programs:
-export EDITOR="nvim"
+export EDITOR="vis"
 export TERMINAL="alacritty"
 export BROWSER="qutebrowser"
 export READER="zathura"

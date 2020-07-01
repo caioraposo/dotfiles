@@ -1,0 +1,178 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;
+;==========================================================
+
+[colors]
+; Nord
+background = #2E3440
+background-alt = #4C566A
+foreground = #ECEFF4
+foreground-alt = #D8DEE9
+primary = #8FBCBB
+secondary = #5E81AC
+alert =	#BF616A
+yellow = #EBCB8B
+green = #A3BE8C
+cyan = #88C0D0
+orange = #D08770
+pink = #B48EAD
+purple = #bd93f9
+
+[settings]
+format-padding = 1
+enable-ipc = true
+screenchange-reload = true
+
+[bar/default]
+width = 100%
+height = 30
+background = ${colors.background}
+foreground = ${colors.foreground}
+font-0 = JetBrainsMono Medium:pixelsize=11;1
+font-1 = Hack Nerd Font:size=11;1
+wm-restack = bspwm
+modules-left = bspwm title
+modules-right = xkeyboard pulseaudio wlan eth battery date time
+
+[module/title]
+type = internal/xwindow
+format-foreground = ${colors.primary}
+format = <label>
+label = %title%
+label-maxlen = 40
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format = <label-layout> <label-indicator>
+
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+format-prefix = "  "
+
+label-layout = %name%
+label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+mount-1 = /home
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+format-padding = 0
+
+[module/bspwm]
+type = internal/bspwm
+format-padding = 0
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 1
+
+label-occupied = %index%
+label-occupied-padding = 1
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %index%
+label-empty-foreground = ${colors.background-alt}
+label-empty-padding = 1
+
+[module/time]
+type = internal/date
+label =  %date%
+date = %H:%M%
+
+[module/date]
+type = internal/date
+label =  %date%
+date = %a %d. %b%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = 墳 <label-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${root.foreground}
+label-muted =  muted
+label-muted-foreground = #666
+
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACAD
+full-at = 98
+
+format-charging-prefix = "  "
+format-charging = <animation-charging> <label-charging>
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-charging-foreground = ${colors.yellow}
+
+format-full =
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-0-foreground = ${colors.alert}
+ramp-capacity-1-foreground = ${colors.yellow}
+ramp-capacity-2-foreground = ${colors.green}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-framerate = 750
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 3.0
+format-connected = 直 <label-connected>
+label-connected = %essid%
+format-disconnected = <label-disconnected>
+label-disconnected = 睊 no wifi
+label-disconnected-foreground = ${colors.secondary}
+
+; <ramp-signal>
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground}
+
+[module/eth]
+type = internal/network
+interface = enp8s0
+interval = 3.0
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground}
+label-connected = %local_ip%
+format-disconnected = <label-disconnected>
+label-disconnected =  disconnected
+label-disconnected-foreground = ${colors.foreground}
+
+; vim:ft=dosini

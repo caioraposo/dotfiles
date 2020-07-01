@@ -45,7 +45,7 @@ fi
 numlockx on &
 sxhkd -m 1 &
 ibus-daemon --xim -d &
-feh --bg-scale ~/.config/wallpaper.png &
+feh --bg-scale ~/.config/wallpaper.jpg &
 $HOME/.config/polybar/launch.sh &
 dunst &
 xflux -l -1.455755 -g -48.490180 & # Belém coordinates

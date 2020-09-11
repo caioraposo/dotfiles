@@ -32,5 +32,5 @@ numlockx
 neofetch
 pfetch
 texlive-bin
-tlmgr
 calcurse
+ufw

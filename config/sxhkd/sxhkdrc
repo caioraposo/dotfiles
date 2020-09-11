@@ -11,6 +11,8 @@ super + c
     $TERMINAL -e calcurse
 super + m
 	$TERMINAL -e cmus
+super + v
+	$TERMINAL -e pulsemixer
 super + s
     tdrop -ma -w -4 alacritty
 super + @space
@@ -26,10 +28,12 @@ super + Next
 super + alt + h
     zathura ~/Documents/HORARIO_DE_AULA.pdf
 Print
-    maim ~/Pictures/Screenshots/$(date '+%y%m%d-%H%M-%S').png
+    shotgun ~/Pictures/Screenshots/$(date '+%y%m%d-%H%M-%S').png
 # Pick screenshot type
 shift + Print
-    maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+    shotgun -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+super + alt + t
+    telegram-desktop
 
 #
 # bspwm hotkeys

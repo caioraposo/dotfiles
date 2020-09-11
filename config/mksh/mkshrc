@@ -1,0 +1,21 @@
+\: "${MKSH:=$(\builtin whence -p mksh)}"; \: "${MKSH:=/bin/mksh}";
+\: SHELL=$MKSH;
+\: HISTFILE=~/.mksh_history; \: HISTSIZE=1000;
+\export MKSH SHELL HISTFILE HISTSIZE
+
+case "$TERM" in
+xterm|linux|screen|alacritty|*256col*)
+	PS1=$'\001\r''$(\
+((e=$?))||e="";
+d=${PWD/$HOME/\~};
+\print "${d##*/}'"${SSH_CONNECTION:+"@${HOSTNAME:=$(hostname)}"}"'${e:+"?\001\e[0;31m$e\001\e[0m"}\001\e[0;32m'"$(((USER_ID)) && \print \$ || \print \#)\001\e[0m"'") '
+;;
+network|dump|*)
+	PS1=$'\001\r''$(\
+((e=$?))||e="";
+d=${PWD/$HOME/\~};
+\print "${d##*/}'"${SSH_CONNECTION:+"@${HOSTNAME:=$(hostname)}"}"'${e:+"?$e"}'"$(((USER_ID)) && \print \$ || \print \#)"'") '
+;;
+esac
+
+. "${XDG_CONFIG_HOME:-$HOME/.config}"/sh/aliases 2>/dev/null

@@ -19,11 +19,11 @@ scrolling:
 
 font:
   normal:
-    family: JetBrains Mono
-  size: 14.0
+    family: Go Mono
+  size: 13.0
   offset:
     x: 0
-    y: 0
+    y: 1
   glyph_offset:
     x: 0
     y: 0
@@ -98,7 +98,7 @@ schemes:
 
 colors: *nord
 
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
@@ -139,7 +139,7 @@ selection:
   save_to_clipboard: false
 
 # Allow terminal applications to change Alacritty's window title.
-dynamic_title: true
+window.dynamic_title: true
 
 cursor:
   # Cursor style

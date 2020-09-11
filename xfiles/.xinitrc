@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-xrandr --output DisplayPort-1 --mode 1980x1080 --rate 144
+xrandr --output DisplayPort-1 --mode 1920x1080 --rate 144
 
 
 [ -f "$HOME/.xprofile" ] && . ~/.xprofile
@@ -45,9 +45,9 @@ fi
 numlockx on &
 sxhkd -m 1 &
 ibus-daemon --xim -d &
-feh --bg-scale ~/.config/wallpaper.jpg &
+feh --bg-scale ~/.config/wallpaper.png &
 $HOME/.config/polybar/launch.sh &
 dunst &
 xflux -l -1.455755 -g -48.490180 & # Belém coordinates
 
-exec bspwm
+exec dbus-launch --exit-with-session bspwm

@@ -34,6 +34,9 @@ let g:lightline = {
       \ 'colorscheme': 'nord',
       \ }
 
+map <leader>w :w<Enter>
+map <leader>q :wq<Enter>
+
 set go=a
 set mouse=a
 set nohlsearch
@@ -95,7 +98,7 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 let g:rustfmt_autosave = 1
 
 " Python
-let g:python3_host_prog = "~/.local/share/pyenv/versions/nvim-3.8/bin/python"
+" let g:python3_host_prog = "~/.local/share/pyenv/versions/nvim-3.8/bin/python"
 au BufWritePre *.py execute | Black
 if !exists("g:black_linelength")
   let g:black_linelength = 100

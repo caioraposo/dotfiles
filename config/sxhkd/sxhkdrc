@@ -5,7 +5,7 @@ super + Return
 	$TERMINAL
 super + b
 	$BROWSER
-super + f
+super + alt + f
     $TERMINAL -e lf
 super + c
     $TERMINAL -e calcurse
@@ -64,7 +64,7 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,shift + s,shift + f}
+super + {t,shift + t,shift + s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags

@@ -1,6 +1,14 @@
 #!/bin/sh
 # Profile file. Runs on login. Environmental variables are set here.
 
+# Default programs
+export EDITOR="vis"
+export TERMINAL="alacritty"
+export BROWSER="firefox"
+export READER="zathura"
+export FM="lf"
+export CALENDAR="calcurse"
+
 export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$HOME/.local/share/cargo/bin:$PATH"
 export PATH="$HOME/.local/share/pyenv/bin:$PATH"
@@ -8,21 +16,7 @@ export PATH="$HOME/.local/share/Discord:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/src/google-cloud-sdk/bin:$PATH"
 
-# Default programs
-export EDITOR="nvim"
-export TERMINAL="alacritty"
-export BROWSER="qutebrowser"
-export READER="zathura"
-export FM="lf"
-export CALENDAR="calcurse"
-
-# Dvorak..
-#export XKB_DEFAULT_LAYOUT="br"
-#export XKB_DEFAULT_VARIANT="dvorak"
-#export XKB_DEFAULT_OPTION="grp:alt_shift_toggle,caps:swapescape"
-#export XKB_DEFAULT_MODEL="pc101"
-
-# Other program settings:
+# Other programs settings:
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export TERMINFO="/usr/share/terminfo"
 export QT_QPA_PLATFORMTHEME="qt5ct"

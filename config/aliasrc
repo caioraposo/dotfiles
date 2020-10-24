@@ -1,0 +1,66 @@
+#!/bin/sh
+
+alias \
+    e="exa" \
+    ea="exa -la" \
+    vi="$EDITOR" \
+    vf='$EDITOR "$(fzf)"' \
+    vo='$TERMINAL -e $EDITOR "$(fzf)"' \
+    dvi="doas $EDITOR" \
+    py="python3" \
+    tree="exa -T" \
+    g="git" \
+    gs="git status" \
+    gb="git branch" \
+    gc='git commit' \
+    gch="git checkout" \
+    ga="git add" \
+    gd="git diff" \
+    gl="git log" \
+    xbpsi="doas xbps-install -S" \
+    xbpsu="doas xbps-install -Su" \
+    xbpsr="doas xbps-remove -R" \
+    xbpsq="xbps-query -Rs" \
+    yt="youtube-dl --add-metadata -i" \
+    yta="yt -x -f bestaudio/best" \
+    ytm="yt -x -f 251 --add-metadata " \
+
+# Open coniguration files
+alias \
+    cfp="$EDITOR ~/.profile" \
+    cfa="$EDITOR ~/.config/aliasrc" \
+    cfi3="$EDITOR ~/.config/i3/config" \
+    cfbar="$EDITOR ~/.config/polybar/config" \
+    cff="$EDITOR ~/.config/fish/config.fish" \
+    cfabbr="$EDITOR ~/.config/fish/abbreviations.fish" \
+    initf="$EDITOR ~/.config/fish/profile.fish" \
+    cfnvim="$EDITOR ~/.config/nvim/init.vim" \
+    cfvis="$EDITOR ~/.config/vis/visrc.lua" \
+    cfterm="$EDITOR ~/.config/alacritty/alacritty.yml" \
+    cfwm="$EDITOR ~/.config/bspwm/bspwmrc" \
+    cfsway="$EDITOR ~/.config/sway/config" \
+    cfk="$EDITOR ~/.config/sxhkd/sxhkdrc" \
+    cfr="$EDITOR ~/.config/rofi/config" \
+    cflf="$EDITOR ~/.config/lf/lfrc" \
+    cfqb="$EDITOR ~/.config/qutebrowser/config.py" \
+    cfgrub="doas $EDITOR /etc/default/grub" \
+
+# Run systemd/glibc apps
+#alias dorunf='docker run -i -t
+#    --privileged
+#    --net host
+#    -u $UID:$GID
+#    -e DISPLAY
+#    -e COLUMNS="`tput cols`"
+#    -e LINES="`tput lines`"
+#    -w $PWD
+#    -v /etc/group:/etc/group:ro
+#    -v /etc/passwd:/etc/passwd:ro
+#    -v /etc/shadow:/etc/shadow:ro
+#    -v /etc/sudoers.d:/etc/sudoers.d:ro
+#    -v /usr/share/themes:/usr/share/themes:ro
+#    -v /usr/share/fonts:/usr/share/fonts:ro
+#    -v /etc/X11:/etc/X11:ro
+#    -v /var/run/docker.sock:/var/run/docker.sock
+#    -v /tmp/.X11-unix:/tmp/.X11-unix:rw
+#    -v /home/$USER:/home/$USER'

@@ -1,7 +1,4 @@
--- nord-vis, based on base16-vis
--- by Caio Raposo
--- Nord scheme by arcticicestudio
-
+-- Acme editor color scheme
 local lexers = vis.lexers
 
 local colors = {
@@ -32,24 +29,25 @@ lexers.STYLE_COMMENT = 'fore:'..colors.base03..',italics'
 lexers.STYLE_DEFAULT = bg..fg
 lexers.STYLE_NOTHING = bg
 lexers.STYLE_IDENTIFIER = 'fore:'..fg
-lexers.STYLE_NUMBER = 'fore:'..colors.base0F
-lexers.STYLE_REGEX = 'fore:'..colors.base0C
+lexers.STYLE_NUMBER = 'fore:'..fg
+lexers.STYLE_REGEX = 'fore:'..fg
 lexers.STYLE_VARIABLE = 'fore:'..fg
-lexers.STYLE_CLASS = 'fore:'..colors.base07
-lexers.STYLE_TYPE = 'fore:'..colors.base07
-lexers.STYLE_LABEL = 'fore:'..colors.base07
-lexers.STYLE_FUNCTION = 'fore:'..colors.base08..',bold'
-lexers.STYLE_DEFINITION = 'fore:'..colors.base08
-lexers.STYLE_KEYWORD = 'fore:'..colors.base09
-lexers.STYLE_OPERATOR = 'fore:'..colors.base09
-lexers.STYLE_TAG = 'fore:'..colors.base09
-lexers.STYLE_PREPROCESSOR = 'fore:'..colors.base0A
-lexers.STYLE_ERROR = 'fore:'..colors.base0B..',italics'
-lexers.STYLE_STRING = 'fore:'..colors.base0E
+lexers.STYLE_CLASS = 'fore:'..fg
+lexers.STYLE_TYPE = 'fore:'..fg
+lexers.STYLE_LABEL = 'fore:'..fg
+lexers.STYLE_FUNCTION = 'fore:'..fg..',bold'
+lexers.STYLE_DEFINITION = 'fore:'..fg
+lexers.STYLE_KEYWORD = 'fore:'..fg
+lexers.STYLE_OPERATOR = 'fore:'..fg
+lexers.STYLE_TAG = 'fore:'..fg
+lexers.STYLE_PREPROCESSOR = 'fore:'..fg
+lexers.STYLE_ERROR = 'fore:'..fg..',italics'
+lexers.STYLE_STRING = 'fore:'..fg
+lexers.STYLE_EMBEDDED = 'fore:'..fg
+lexers.STYLE_CONSTANT = 'fore:'..fg
 
 
 lexers.STYLE_LINENUMBER = 'fore:'..colors.base02..',back:'..colors.base00
-lexers.STYLE_LINENUMBER_CURSOR = 'fore:'..fg
 lexers.STYLE_CURSOR = 'fore:'..colors.base00..',back:'..colors.base05
 lexers.STYLE_CURSOR_PRIMARY = 'fore:'..colors.base00..',back:'..colors.base05
 lexers.STYLE_CURSOR_LINE = 'back:'..colors.base01
@@ -60,3 +58,4 @@ lexers.STYLE_STATUS_FOCUSED = 'fore:'..colors.base09..',back:'..colors.base01
 lexers.STYLE_SEPARATOR = lexers.STYLE_DEFAULT
 lexers.STYLE_INFO = 'fore:default,back:default,bold'
 lexers.STYLE_EOF = ''
+

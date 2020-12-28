@@ -15,6 +15,7 @@ export PATH="$HOME/.local/share/pyenv/bin:$PATH"
 export PATH="$HOME/.local/share/Discord:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/src/google-cloud-sdk/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
 
 # Other programs settings:
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
@@ -24,6 +25,7 @@ export XDG_RUNTIME_DIR="$HOME/.local/xdgdir"
 export XDG_DATA_HOME="$HOME/.local/share"
 export SXHKD_SHELL="/usr/bin/sh"
 export WINIT_HIDPI_FACTOR="1.0"
+export GO111MODULE=on
 
 # ~/ Clean-up:
 #export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority" # This line will break some DMs.
@@ -44,3 +46,4 @@ export QT_IM_MODULE=ibus
 
 # startx at login
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
+

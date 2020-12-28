@@ -34,3 +34,7 @@ pfetch
 texlive-bin
 calcurse
 ufw
+font-go-ttf
+font-hack-ttf
+vis
+feh

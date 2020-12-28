@@ -50,4 +50,4 @@ $HOME/.config/polybar/launch.sh &
 dunst &
 #xflux -l -1.455755 -g -48.490180 & # Belém coordinates
 
-exec dbus-launch --exit-with-session bspwm
+exec bspwm

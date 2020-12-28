@@ -1,6 +1,7 @@
 #!/bin/sh
 
 ln -s $(pwd)/config/* $HOME/.config/
+ln -s $(pwd)/img/wallpaper.* $HOME/.config/
 ln -s $(pwd)/xfiles/.xinitrc $HOME
 ln -s $(pwd)/xfiles/.xprofile $HOME
 ln -s $(pwd)/xfiles/.Xresources $HOME

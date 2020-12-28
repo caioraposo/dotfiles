@@ -18,7 +18,7 @@ if status is-login
 end
 
 # pyenv init
-#status --is-interactive; and pyenv init - | source
-#status --is-interactive; and pyenv virtualenv-init - | source
+status --is-interactive; and pyenv init - | source
+status --is-interactive; and pyenv virtualenv-init - | source
 
 eval /home/caio/.local/share/miniconda3/bin/conda "shell.fish" "hook" $argv | source

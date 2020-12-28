@@ -3,6 +3,8 @@
 
 super + Return
 	$TERMINAL
+super + shift + Return
+    samedir
 super + b
 	$BROWSER
 super + alt + f
@@ -23,6 +25,8 @@ super + Escape
 	pkill -USR1 -x sxhkd
 super + End
     doas poweroff
+super + Home
+    loginctl suspend
 super + Next
     xsecurelock
 super + alt + h

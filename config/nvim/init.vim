@@ -1,7 +1,6 @@
 let mapleader=","
 let maplocalleader=","
 
-
 " Automatically install plugins
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
@@ -23,15 +22,16 @@ Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'dag/vim-fish'
 Plug 'airblade/vim-gitgutter'
+Plug 'ryuta69/elly.vim'
 call plug#end()
 
 let g:nord_italic = 1
 let g:nord_underline = 1
 
-color nord
+color nofrils-dark
 
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'powerline',
       \ }
 
 map <leader>w :w<Enter>
@@ -98,7 +98,7 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 let g:rustfmt_autosave = 1
 
 " Python
-" let g:python3_host_prog = "~/.local/share/pyenv/versions/nvim-3.8/bin/python"
+" let g:python3_host_prog = "~/.local/share/pyenv/versions/nvim/bin/python"
 au BufWritePre *.py execute | Black
 if !exists("g:black_linelength")
   let g:black_linelength = 100

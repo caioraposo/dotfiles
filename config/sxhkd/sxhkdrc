@@ -32,10 +32,10 @@ super + Next
 super + alt + h
     zathura ~/Documents/HORARIO_DE_AULA.pdf
 Print
-    shotgun ~/Pictures/Screenshots/$(date '+%y%m%d-%H%M-%S').png
+    maim ~/Pictures/Screenshots/$(date '+%y%m%d-%H%M-%S').png
 # Pick screenshot type
 shift + Print
-    shotgun -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+    maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 super + alt + t
     telegram-desktop
 

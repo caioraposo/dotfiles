@@ -23,9 +23,12 @@ export TERMINFO="/usr/share/terminfo"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export XDG_RUNTIME_DIR="$HOME/.local/xdgdir"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
 export SXHKD_SHELL="/usr/bin/sh"
 export WINIT_HIDPI_FACTOR="1.0"
 export GO111MODULE=on
+
 
 # ~/ Clean-up:
 #export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority" # This line will break some DMs.
@@ -40,10 +43,14 @@ export GOPATH="$XDG_DATA_HOME/go"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export IBUS_MOZC_DEFAULT_HIRAGANA=" ibus-daemon --xim -d"
+export MOZ_ENABLE_WAYLAND=1
+export GDK_BACKEND=wayland
+export XDG_CURRENT_DESKTOP=sway
+export _JAVA_AWT_WM_NONREPARENTING=1
+export SDL_VIDEODRIVER=wayland
 export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
+export XMODIFIERS=\@im=ibus
 
 # startx at login
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
-
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec dbus-run-session sway; fi

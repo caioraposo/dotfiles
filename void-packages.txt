@@ -2,7 +2,6 @@ xorg
 socklog-void
 bspwm
 sxhkd
-fish-shell
 rofi
 neovim
 dunst
@@ -11,13 +10,12 @@ lf
 zathura
 polybar
 fzf
+sndio
 cmus
 cmus-opus
-cmus-pulseaudio
+cmus-sndio
 firefox
 mpv
-pulseaudio
-pulsemixer
 cronie
 curl
 git
@@ -29,8 +27,6 @@ exa
 fd
 ripgrep
 numlockx
-neofetch
-pfetch
 texlive-bin
 calcurse
 ufw
@@ -38,3 +34,5 @@ font-go-ttf
 font-hack-ttf
 vis
 feh
+xdotool
+maim

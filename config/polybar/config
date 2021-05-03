@@ -42,7 +42,7 @@ font-0 = Fira Mono:pixelsize=11;1
 font-1 = Hack Nerd Font:size=11;1
 wm-restack = bspwm
 modules-left = bspwm title
-modules-right = xkeyboard pulseaudio wlan eth battery date time
+modules-right = xkeyboard temperature pulseaudio wlan eth date time
 
 [module/title]
 type = internal/xwindow
@@ -174,5 +174,33 @@ label-connected = %local_ip%
 format-disconnected = <label-disconnected>
 label-disconnected =  disconnected
 label-disconnected-foreground = ${colors.foreground}
+
+[module/temperature]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+
+; Base temperature for where to start the ramp (in degrees celsius)
+; Default: 0
+base-temperature = 20
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 60
 
 ; vim:ft=dosini

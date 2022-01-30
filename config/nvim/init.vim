@@ -17,7 +17,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
 Plug 'tpope/vim-surround'
 Plug 'rust-lang/rust.vim'
-Plug 'psf/black', { 'tag': '19.10b0' }
 Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'dag/vim-fish'
@@ -28,10 +27,11 @@ call plug#end()
 let g:nord_italic = 1
 let g:nord_underline = 1
 
-color nofrils-dark
+color nord
+set t_ut=
 
 let g:lightline = {
-      \ 'colorscheme': 'powerline',
+      \ 'colorscheme': 'nord',
       \ }
 
 map <leader>w :w<Enter>

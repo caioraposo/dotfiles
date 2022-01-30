@@ -30,24 +30,21 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # Configure keyboard layout
-setxkbmap br,br -variant dvorak, -option grp:alt_shift_toggle,caps:swapescape
+setxkbmap dvorak-br
 
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
+    for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
 fi
 
 # Start some nice programs
 
-numlockx on &
 sxhkd -m 1 &
-ibus-daemon --xim -d &
 feh --bg-scale ~/.config/wallpaper.png &
 $HOME/.config/polybar/launch.sh &
-dunst &
-#xflux -l -1.455755 -g -48.490180 & # Belém coordinates
+pipewire &
 
 exec bspwm

@@ -1,5 +1,5 @@
 env:
-    TERM: xterm-256color
+    TERM: alacritty
 
 window:
   dimensions:
@@ -8,10 +8,8 @@ window:
   padding:
     x: 0
     y: 0
-  # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
   decorations: full
-  startup_mode: Maximized
 
 scrolling:
   history: 10000
@@ -23,16 +21,12 @@ font:
   size: 13.0
   offset:
     x: 0
-    y: 1
+    y: 0
   glyph_offset:
     x: 0
     y: 0
-debug:
-    render_timer: false
-    persistent_logging: false
 
 draw_bold_text_with_bright_colors: true
-
 
 schemes:
     # Colors (Nord)
@@ -64,38 +58,6 @@ schemes:
          cyan:    '0x8FBCBB'
          white:   '0xECEFF4'
 
-    # Colors (Gruvbox dark)
-    gruvbox: &gruvbox
-      # Default colors
-      primary:
-        # hard contrast: background = '0x1d2021'
-        background: '0x282828'
-        # soft contrast: background = '0x32302f'
-        foreground: '0xebdbb2'
-
-      # Normal colors
-      normal:
-        black:   '0x282828'
-        red:     '0xcc241d'
-        green:   '0x98971a'
-        yellow:  '0xd79921'
-        blue:    '0x458588'
-        magenta: '0xb16286'
-        cyan:    '0x689d6a'
-        white:   '0xa89984'
-
-      # Bright colors
-      bright:
-        black:   '0x928374'
-        red:     '0xfb4934'
-        green:   '0xb8bb26'
-        yellow:  '0xfabd2f'
-        blue:    '0x83a598'
-        magenta: '0xd3869b'
-        cyan:    '0x8ec07c'
-        white:   '0xebdbb2'
-
-
 colors: *nord
 
 bell:
@@ -103,7 +65,7 @@ bell:
   duration: 0
   color: '0xffffff'
 
-background_opacity: 0.9
+background_opacity: 1
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
@@ -120,7 +82,7 @@ mouse:
   # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: false
 
-  url:
+  hint:
     # When set to `None`, URL launching will be disabled completely.
     launcher:
       program: xdg-open
@@ -142,19 +104,9 @@ selection:
 window.dynamic_title: true
 
 cursor:
-  # Cursor style
-  #
-  # Values for `style`:
-  #   - ▇ Block
-  #   - _ Underline
-  #   - | Beam
   style: Block
-
-  # If this is `true`, the cursor will be rendered as a hollow box when the
-  # window is not focused.
   unfocused_hollow: true
 
-# Live config reload (changes require restart)
 live_config_reload: true
 
 # Send ESC (\x1b) before characters when alt is pressed.

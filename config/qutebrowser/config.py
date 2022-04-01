@@ -24,3 +24,6 @@ c.fonts.web.family.serif = "IBM Plex Serif"
 c.fonts.web.family.sans_serif = "Fira Sans"
 c.fonts.web.family.standard = "Fira Sans"
 c.fonts.web.family.fixed = "Go Mono"
+
+config.source('nord-qutebrowser.py')
+

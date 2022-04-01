@@ -1,19 +1,20 @@
 require('vis')
+require("hare_detect")
 
 vis.events.subscribe(vis.events.INIT, function()
-	vis:command('set change-256colors off')
+	vis:command('set change-256colors on')
 end)
 
 vis.events.subscribe(vis.events.WIN_OPEN, function(win)
-    vis:command('set theme acme')
+    vis:command('set theme nord')
     vis:command('set autoindent')
     vis:command('set expandtab')
     vis:command('set relativenumbers')
-    vis:command('set colorcolumn 100')
+    vis:command('set colorcolumn 80')
 
     vis:map(vis.modes.NORMAL, ',w', ':w<Enter>')
     vis:map(vis.modes.NORMAL, ',q', ':wq<Enter>')
-    vis:map(vis.modes.NORMAL, ',c', string.format(':!pdflatex %s <Enter>', win.file.name))
+    vis:map(vis.modes.NORMAL, ',l', string.format(':!pdflatex %s <Enter>', win.file.name))
 
     -- Y and P for system clipboard
     vis:map(vis.modes.NORMAL, 'Y', ':> wl-copy 2>/dev/null -n<Enter>')
@@ -23,9 +24,8 @@ vis.events.subscribe(vis.events.WIN_OPEN, function(win)
     -- vis:map(vis.modes.VISUAL, 'Y', '"+y')
     vis:map(vis.modes.VISUAL, 'P', '"+p')
 
-
     vis.win.tabwidth = 4
-    if win.syntax == 'ansi_c' then
+    if win.syntax == 'ansi_c' or win.syntax == 'hare' then
         vis:command('set expandtab off')
         vis.win.tabwidth = 8
     elseif win.syntax == 'makefile' then

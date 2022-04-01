@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  content.media_capture:
-    https://meet.google.com: false
+  content.notifications.enabled:
+    https://lemmy.ml: false

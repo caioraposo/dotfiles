@@ -1,14 +1,13 @@
 #!/bin/sh
-
 alias \
-    e="exa" \
-    ea="exa -la" \
+    cd="source ~/.cd_extend" \
+    e="ls -hN --color=auto --group-directories-first" \
+    ea="ls -lahN --color=auto --group-directories-first" \
     vi="$EDITOR" \
     vf='$EDITOR "$(fzf)"' \
     vo='$TERMINAL -e $EDITOR "$(fzf)"' \
     dvi="doas $EDITOR" \
     py="python3" \
-    tree="exa -T" \
     g="git" \
     gs="git status" \
     gb="git branch" \
@@ -29,17 +28,15 @@ alias \
 alias \
     cfp="$EDITOR ~/.profile" \
     cfa="$EDITOR ~/.config/aliasrc" \
+    cfz="$EDITOR ~/.config/zathura/zathurarc" \
     cfi3="$EDITOR ~/.config/i3/config" \
     cfbar="$EDITOR ~/.config/polybar/config" \
-    cff="$EDITOR ~/.config/fish/config.fish" \
-    cfabbr="$EDITOR ~/.config/fish/abbreviations.fish" \
-    initf="$EDITOR ~/.config/fish/profile.fish" \
     cfnvim="$EDITOR ~/.config/nvim/init.vim" \
     cfvis="$EDITOR ~/.config/vis/visrc.lua" \
     cfterm="$EDITOR ~/.config/alacritty/alacritty.yml" \
     cfwm="$EDITOR ~/.config/bspwm/bspwmrc" \
-    cfsway="$EDITOR ~/.config/sway/config" \
     cfk="$EDITOR ~/.config/sxhkd/sxhkdrc" \
+    cfsway="$EDITOR ~/.config/sway/config" \
     cfr="$EDITOR ~/.config/rofi/config" \
     cflf="$EDITOR ~/.config/lf/lfrc" \
     cfqb="$EDITOR ~/.config/qutebrowser/config.py" \

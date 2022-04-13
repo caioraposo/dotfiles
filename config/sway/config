@@ -1,21 +1,44 @@
-set $mod Mod4
+# Autostart
+exec {
+    mako
+    xfce-polkit
+    wlsunset -T 5000 -t 1900 -l -1.4 -L -48.4 # Belém lat/long
+    pipewire
+    #pipewire-media-session
+    dbus-update-activation-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+}
 
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema cursor-theme 'posy-white'
+    gsettings set $gnome-schema font-name 'Fira Sans 12'
+}
+
+# Lock after 30 minutes then idle after 5 seconds
+exec swayidle -w \
+	timeout 1800 'swaylock' \
+	timeout 1805 'swaymsg "output * dpms off"' \
+	resume 'swaymsg "output * dpms on"'
+
+set $mod Mod4
 set $left h
 set $down j
 set $up k
 set $right l
 
 set $term alacritty
-set $menu exec wofi --show drun
+set $menu exec fuzzel -b eceff4f1 -t 2e3440f1 -s d8dee9f1 -m 5e81acff -S 2e3440f1
 
-font Go Mono 11
+font Fira Sans 16, IPAGothic 11
 
+output DP-2 mode 1920x1080@144Hz
 output * bg $HOME/.config/wallpaper.png fill
-output DP-2 mode 1920x1080@144Hz position 1920,0
 
 input type:keyboard {
-    xkb_layout br,br
-    xkb_variant dvorak, 
+    xkb_layout dvorak-br
+    #xkb_variant dvorak
+    #xkb_options "grp:alt_shift_toggle"
     xkb_options "grp:alt_shift_toggle,caps:swapescape"
 }
 
@@ -31,9 +54,12 @@ default_border pixel
     bindsym $mod+c exec $term -e calcurse
     bindsym $mod+m exec $term -e cmus
     bindsym $mod+alt+v exec $term -e pulsemixer
+    bindsym $mod+alt+t exec telegram-desktop
     bindsym $mod+End exec doas poweroff
-    bindsym $mod+Home exec loginctl suspend
-    bindsym $mod+alt+h exec zathura ~/Documents/HORARIO_DE_AULA.pdf
+    bindsym $mod+Insert exec doas zzz
+    bindsym $mod+Home exec swayidle -w 'swaymsg "output * dpms off"' \
+                           resume 'swaymsg "output * dpms on"'
+    bindsym $mod+alt+h exec $term -e sc-im ~/org/classes.csv
 
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -47,12 +73,25 @@ default_border pixel
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaymsg exit
+
     # Multimedia
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-#
+    bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +5
+    bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -5
+    bindsym XF86AudioMute exec pulsemixer --toggle-mute
+
+    # Screenshot
+    bindsym Mod4+p exec grimshot save active
+    bindsym Mod4+Shift+p exec grimshot save area
+    bindsym Mod4+Mod1+p exec grimshot save output
+    bindsym Mod4+Ctrl+p exec grimshot save window
+
+    # Video recording
+    bindsym Mod4+F9 exec wf-recorder -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")
+    bindsym Mod4+Shift+F9 exec wf-recorder -g "$$(slurp)" -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")
+    bindsym Mod4+F10 exec killall -s SIGINT wf-recorder
+
+
 # Moving around:
 #
     # Move your focus around
@@ -124,7 +163,7 @@ default_border pixel
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+alt+t focus mode_toggle
+    bindsym $mod+Shift+t focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -184,11 +223,12 @@ set $nord14 #A3BE8C
 set $nord15 #B48EAD
 
 bar {
+    status_command custom_statusbar
+    
     position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%T %d/%m/%Y'; do sleep 1; done
+    pango_markup disabled
+    font pango:IPAGothic 11, Fira Sans 11
+    strip_workspace_numbers yes
 
     colors {
         statusline $nord8
@@ -204,4 +244,10 @@ client.focused_inactive $nord4 $nord4 $nord0 $nord15 $nord4
 client.unfocused        $nord4 $nord1 $nord9 $nord15 $nord1
 client.urgent           $nord4 $nord11 $nord4 $nord11 $nord11
 
-include /etc/sway/config.d/*
+# Application specific settings
+assign [app_id="qutebrowser"] workspace 3
+assign [app_id="firefox"] workspace 3
+assign [app_id="zathura"] workspace 4
+assign [app_id="telegram"] workspace 5
+
+include /etc/sway/config.d

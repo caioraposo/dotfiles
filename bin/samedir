@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Open a terminal window in the same directory as the currently active window.
+
+pid=$(sway_get_focused_pid)
+cwd=$(readlink /proc/$(pgrep --newest --parent $pid)/cwd)
+alacritty --working-directory $cwd

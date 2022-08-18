@@ -1,6 +1,6 @@
 set font "Go Mono 12"
 set selection-clipboard clipboard
-set recolor true
+map i recolor
 # Nord color palette
 set recolor-lightcolor "#2E3440"
 set recolor-darkcolor "#ECEFF4"

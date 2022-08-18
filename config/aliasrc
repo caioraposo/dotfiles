@@ -1,8 +1,8 @@
 #!/bin/sh
 alias \
-    cd="source ~/.cd_extend" \
     e="ls -hN --color=auto --group-directories-first" \
     ea="ls -lahN --color=auto --group-directories-first" \
+    v="$EDITOR" \
     vi="$EDITOR" \
     vf='$EDITOR "$(fzf)"' \
     vo='$TERMINAL -e $EDITOR "$(fzf)"' \

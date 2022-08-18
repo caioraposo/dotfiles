@@ -1,7 +1,6 @@
 # Autostart
 exec {
     mako
-    xfce-polkit
     wlsunset -T 5000 -t 1900 -l -1.4 -L -48.4 # Belém lat/long
     pipewire
     #pipewire-media-session
@@ -28,7 +27,7 @@ set $up k
 set $right l
 
 set $term alacritty
-set $menu exec fuzzel -b eceff4f1 -t 2e3440f1 -s d8dee9f1 -m 5e81acff -S 2e3440f1
+set $menu exec fuzzel -f Fira Sans:size=12 -b eceff4f1 -t 2e3440f1 -s d8dee9f1 -m 5e81acff -S 2e3440f1
 
 font Fira Sans 16, IPAGothic 11
 
@@ -46,6 +45,7 @@ default_border pixel
 
 ### Key bindings
     bindsym $mod+q kill
+    bindsym $mod+Shift+q exec kill $(sway_get_focused_pid)
     bindsym $mod+Return exec $term
     bindsym $mod+Shift+Return exec samedir
     bindsym $mod+space exec $menu
@@ -54,7 +54,6 @@ default_border pixel
     bindsym $mod+c exec $term -e calcurse
     bindsym $mod+m exec $term -e cmus
     bindsym $mod+alt+v exec $term -e pulsemixer
-    bindsym $mod+alt+t exec telegram-desktop
     bindsym $mod+End exec doas poweroff
     bindsym $mod+Insert exec doas zzz
     bindsym $mod+Home exec swayidle -w 'swaymsg "output * dpms off"' \
@@ -87,9 +86,9 @@ default_border pixel
     bindsym Mod4+Ctrl+p exec grimshot save window
 
     # Video recording
-    bindsym Mod4+F9 exec wf-recorder -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")
+    bindsym Mod4+F9 exec wf-recorder -a -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")
     bindsym Mod4+Shift+F9 exec wf-recorder -g "$$(slurp)" -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")
-    bindsym Mod4+F10 exec killall -s SIGINT wf-recorder
+    bindsym Mod4+F10 exec pkill -2 wf-recorder
 
 
 # Moving around:
@@ -227,7 +226,7 @@ bar {
     
     position top
     pango_markup disabled
-    font pango:IPAGothic 11, Fira Sans 11
+    font Fira Sans 11
     strip_workspace_numbers yes
 
     colors {
@@ -249,5 +248,8 @@ assign [app_id="qutebrowser"] workspace 3
 assign [app_id="firefox"] workspace 3
 assign [app_id="zathura"] workspace 4
 assign [app_id="telegram"] workspace 5
+assign [app_id="Discord"] workspace 5
+assign [app_id="signal"] workspace 5
+for_window [title="Firefox - Sharing Indicator"] floating enable
 
 include /etc/sway/config.d

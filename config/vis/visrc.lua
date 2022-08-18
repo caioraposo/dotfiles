@@ -1,5 +1,6 @@
 require('vis')
 require("hare_detect")
+require("hush_detect")
 
 vis.events.subscribe(vis.events.INIT, function()
 	vis:command('set change-256colors on')
@@ -8,7 +9,7 @@ end)
 vis.events.subscribe(vis.events.WIN_OPEN, function(win)
     vis:command('set theme nord')
     vis:command('set autoindent')
-    vis:command('set expandtab')
+    vis:command('set expandtab off')
     vis:command('set relativenumbers')
     vis:command('set colorcolumn 80')
 

@@ -11,14 +11,14 @@ set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
     gsettings set $gnome-schema cursor-theme 'posy-white'
-    gsettings set $gnome-schema font-name 'Fira Sans 12'
+    gsettings set $gnome-schema font-name 'Go 12'
 }
 
 # Lock after 30 minutes then idle after 5 seconds
 exec swayidle -w \
-	timeout 1800 'swaylock' \
-	timeout 1805 'swaymsg "output * dpms off"' \
-	resume 'swaymsg "output * dpms on"'
+    timeout 1800 'swaylock' \
+    timeout 1805 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"'
 
 set $mod Mod4
 set $left h
@@ -27,21 +27,54 @@ set $up k
 set $right l
 
 set $term alacritty
-set $menu exec fuzzel -f Fira Sans:size=12 -b eceff4f1 -t 2e3440f1 -s d8dee9f1 -m 5e81acff -S 2e3440f1
+set $menu exec fuzzel -f Go:size=12 -b eceff4f1 -t 2e3440f1 -s d8dee9f1 -m 5e81acff -S 2e3440f1
 
-font Fira Sans 16, IPAGothic 11
+font pango:Go 11
 
 output DP-2 mode 1920x1080@144Hz
 output * bg $HOME/.config/wallpaper.png fill
 
 input type:keyboard {
-    xkb_layout dvorak-br
-    #xkb_variant dvorak
-    #xkb_options "grp:alt_shift_toggle"
+    xkb_layout dvorak-br,us
     xkb_options "grp:alt_shift_toggle,caps:swapescape"
 }
 
 default_border pixel
+
+## Workspaces
+# Workspace name
+set $ws1 1:一
+set $ws2 2:二
+set $ws3 3:三
+set $ws4 4:四
+set $ws5 5:五
+set $ws6 6:六
+set $ws7 7:七
+set $ws8 8:八
+set $ws9 9:九
+set $ws10 10:十
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 ### Key bindings
     bindsym $mod+q kill
@@ -114,33 +147,7 @@ default_border pixel
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
-#
-# Workspaces:
-#
-    # Switch to workspace
-    bindsym $mod+1 workspace 1
-    bindsym $mod+2 workspace 2
-    bindsym $mod+3 workspace 3
-    bindsym $mod+4 workspace 4
-    bindsym $mod+5 workspace 5
-    bindsym $mod+6 workspace 6
-    bindsym $mod+7 workspace 7
-    bindsym $mod+8 workspace 8
-    bindsym $mod+9 workspace 9
-    bindsym $mod+0 workspace 10
-    # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace 1
-    bindsym $mod+Shift+2 move container to workspace 2
-    bindsym $mod+Shift+3 move container to workspace 3
-    bindsym $mod+Shift+4 move container to workspace 4
-    bindsym $mod+Shift+5 move container to workspace 5
-    bindsym $mod+Shift+6 move container to workspace 6
-    bindsym $mod+Shift+7 move container to workspace 7
-    bindsym $mod+Shift+8 move container to workspace 8
-    bindsym $mod+Shift+9 move container to workspace 9
-    bindsym $mod+Shift+0 move container to workspace 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
+
 #
 # Layout stuff:
 #
@@ -223,10 +230,10 @@ set $nord15 #B48EAD
 
 bar {
     status_command custom_statusbar
-    
+
     position top
     pango_markup disabled
-    font Fira Sans 11
+    font Go 11
     strip_workspace_numbers yes
 
     colors {
@@ -244,12 +251,12 @@ client.unfocused        $nord4 $nord1 $nord9 $nord15 $nord1
 client.urgent           $nord4 $nord11 $nord4 $nord11 $nord11
 
 # Application specific settings
-assign [app_id="qutebrowser"] workspace 3
-assign [app_id="firefox"] workspace 3
-assign [app_id="zathura"] workspace 4
-assign [app_id="telegram"] workspace 5
-assign [app_id="Discord"] workspace 5
-assign [app_id="signal"] workspace 5
+assign [app_id="qutebrowser"] workspace $ws3
+assign [app_id="firefox"] workspace $ws3
+assign [app_id="zathura"] workspace $ws4
+assign [app_id="telegram"] workspace $ws5
+assign [app_id="Discord"] workspace $ws5
+assign [app_id="signal"] workspace $ws5
 for_window [title="Firefox - Sharing Indicator"] floating enable
 
 include /etc/sway/config.d

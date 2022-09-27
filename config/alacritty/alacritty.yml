@@ -1,6 +1,3 @@
-env:
-    TERM: alacritty
-
 window:
   dimensions:
     columns: 0

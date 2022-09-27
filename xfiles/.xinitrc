@@ -44,7 +44,7 @@ fi
 
 sxhkd -m 1 &
 feh --bg-scale ~/.config/wallpaper.png &
-$HOME/.config/polybar/launch.sh &
+#$HOME/.config/polybar/launch.sh &
 pipewire &
 
 exec bspwm

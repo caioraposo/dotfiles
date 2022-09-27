@@ -1,5 +1,4 @@
--- nord-vis, based on base16-vis
--- by Caio Raposo
+-- nord-vis by Caio Raposo
 -- Nord scheme by arcticicestudio
 
 local lexers = vis.lexers

@@ -1,6 +1,7 @@
 .netrwhist
 config/nvim/autoload/
 config/nvim/plugged/
-mypy_cache/
+.mypy_cache/
 .vim/
 config/qutebrowser/bookmarks/urls
+QtProject.conf

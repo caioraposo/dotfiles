@@ -26,7 +26,7 @@ vis.events.subscribe(vis.events.WIN_OPEN, function(win)
 	vis.win.tabwidth = 4
 	if win.syntax == 'ansi_c' or win.syntax == 'hare' then
 		vis.win.tabwidth = 8
-	elseif win.syntax == 'python' then
+	elseif win.syntax == 'python' or win.syntax == 'rust' then
 		vis:command('set expandtab on')
 	elseif win.file.name and win.file.name:find("COMMIT_EDITMSG") then
 		vis:command('set colorcolumn 72')
@@ -37,25 +37,25 @@ vis.events.subscribe(vis.events.WIN_OPEN, function(win)
 end)
 
 -- adapted from https://github.com/neosimsim/myenv/blob/78ac724f811107109ef647342b4e1fb3974dc422/dotfiles/config/vis/visrc.lua
---function fmt(file, path)
---	local win = vis.win
---	local fmtcmd = 'sed \'s/[[:blank:]]*$//\''
---
---	local pos = win.selection.pos
---	local status, out, err = vis:pipe(file, { start = 0, finish = file.size }, fmtcmd)
---	if status ~= 0 or not out then
---		if err then
---			vis:info(err)
---		else
---			vis:info("error running " .. fmtcmd)
---		end
---		return true
---	end
---
---	file:delete(0, file.size)
---	file:insert(0, out)
---	win.selection.pos= math.min(pos, file.size - 1)
---	return true
---end
---
---vis.events.subscribe(vis.events.FILE_SAVE_PRE, fmt)
+function fmt(file, path)
+	local win = vis.win
+	local fmtcmd = 'sed \'s/[[:blank:]]*$//\''
+
+	local pos = win.selection.pos
+	local status, out, err = vis:pipe(file, { start = 0, finish = file.size }, fmtcmd)
+	if status ~= 0 or not out then
+		if err then
+			vis:info(err)
+		else
+			vis:info("error running " .. fmtcmd)
+		end
+		return true
+	end
+
+	file:delete(0, file.size)
+	file:insert(0, out)
+	win.selection.pos= math.min(pos, file.size - 1)
+	return true
+end
+
+vis.events.subscribe(vis.events.FILE_SAVE_PRE, fmt)

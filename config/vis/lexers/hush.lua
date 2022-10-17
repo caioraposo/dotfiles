@@ -21,7 +21,7 @@ local keyword = token(l.KEYWORD, word_match{
 
 local operator = token(l.OPERATOR, word_match{
   'and', 'or', 'not',
-} + S('+-/*%<>!=:.()[]{}'))
+} + S('+-/*%<>!=:,.()[]{}'))
 
 local number = token(l.NUMBER, l.float + l.integer)
 

@@ -15,15 +15,18 @@ export PATH="$PATH:$HOME/.local/share/pyenv/bin"
 export PATH="$PATH:$HOME/.local/share/Discord"
 export PATH="$PATH:$HOME/.local/src/cproc/qbe/obj"
 
+# XDG Base Directory
+export XDG_RUNTIME_DIR="$HOME/.local/xdgdir"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
+
 # Other programs settings:
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export TERMINFO="/usr/share/terminfo"
 export QT_QPA_PLATFORMTHEME="qt5ct"
-export XDG_RUNTIME_DIR="$HOME/.local/xdgdir"
-export XDG_DATA_HOME="$HOME/.local/share"
-#export XDG_DATA_DIRS="/var/lib/flatpak/exports/share"
-export XDG_PICTURES_DIR="$HOME/Pictures"
-export XDG_SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
 export SXHKD_SHELL="/usr/bin/sh"
 export WINIT_HIDPI_FACTOR="1.0"
 export GO111MODULE=on
@@ -56,6 +59,7 @@ export SDL_VIDEODRIVER=wayland
 export QT_QPA_PLATFORM=wayland
 export GDK_BACKEND=wayland,x11
 export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+#export WLR_DRM_NO_MODIFIERS=1
 
 
 # startx at login

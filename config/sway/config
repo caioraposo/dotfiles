@@ -231,7 +231,7 @@ set $nord15 #B48EAD
 bar {
     status_command custom_statusbar
 
-    position top
+    position bottom
     pango_markup disabled
     font Go 11
     strip_workspace_numbers yes

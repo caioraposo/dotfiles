@@ -3,9 +3,9 @@ anchor=top-right
 border-radius=8
 height=500
 width=400
-default-timeout=10000
+default-timeout=0
 
 font=Go 11
-text-color=#ECEFF4
-background-color=#3B4252
-border-color=#4C566A
+text-color=#2E3440
+background-color=#ECEFF4
+border-color=#D8DEE9

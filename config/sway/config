@@ -3,6 +3,7 @@ exec {
     mako
     wlsunset -T 5000 -t 1900 -l -1.4 -L -48.4 # Belém lat/long
     pipewire
+    /usr/libexec/xdg-desktop-portal -r & /usr/libexec/xdg-desktop-portal-wlr
     #pipewire-media-session
     dbus-update-activation-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 }
@@ -32,7 +33,9 @@ set $menu exec fuzzel -f Go:size=12 -b eceff4f1 -t 2e3440f1 -s d8dee9f1 -m 5e81a
 font pango:Go 11
 
 output DP-2 mode 1920x1080@144Hz
+output HDMI-A-1 mode 1920x1080@60Hz pos 1920 0
 output * bg $HOME/.config/wallpaper.png fill
+#output * adaptive_sync on
 
 input type:keyboard {
     xkb_layout dvorak-br,us
@@ -75,6 +78,8 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+# Move workspace to monitor 
+bindsym $mod+equal move workspace to output right
 
 ### Key bindings
     bindsym $mod+q kill
@@ -258,5 +263,6 @@ assign [app_id="telegram"] workspace $ws5
 assign [app_id="Discord"] workspace $ws5
 assign [app_id="signal"] workspace $ws5
 for_window [title="Firefox - Sharing Indicator"] floating enable
+for_window [title="Firefox — Sharing Indicator"] nofocus
 
 include /etc/sway/config.d

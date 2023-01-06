@@ -11,6 +11,7 @@ export CALENDAR="calcurse"
 
 export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:$HOME/.local/share/cargo/bin"
+export PATH="$PATH:$HOME/.local/share/go/bin"
 export PATH="$PATH:$HOME/.local/share/pyenv/bin"
 export PATH="$PATH:$HOME/.local/share/Discord"
 export PATH="$PATH:$HOME/.local/src/cproc/qbe/obj"
@@ -30,7 +31,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export SXHKD_SHELL="/usr/bin/sh"
 export WINIT_HIDPI_FACTOR="1.0"
 export GO111MODULE=on
-AMD_VULKAN_ICD=RADV
+export AMD_VULKAN_ICD=RADV
 
 # ~/ Clean-up:
 export XAUTHORITY="$HOME/.Xauthority" # This line will break some DMs.
@@ -40,7 +41,7 @@ export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 export LESSHISTFILE="-"
 export WGETRC="$HOME/.config/wget/wgetrc"
 export INPUTRC="$HOME/.config/inputrc"
-export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export GOPATH="$XDG_DATA_HOME/go"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
@@ -56,7 +57,7 @@ export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_TYPE=wayland
 export _JAVA_AWT_WM_NONREPARENTING=1
 export SDL_VIDEODRIVER=wayland
-export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORM=wayland-egl
 export GDK_BACKEND=wayland,x11
 export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
 #export WLR_DRM_NO_MODIFIERS=1

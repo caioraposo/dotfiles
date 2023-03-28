@@ -20,9 +20,9 @@ alias \
     xu="doas xbps-install -Su" \
     xr="doas xbps-remove -R" \
     xq="xbps-query -Rs" \
-    yt="youtube-dl --add-metadata -i" \
-    yta="yt -x -f bestaudio/best" \
-    ytm="yt -x -f 251 --add-metadata " \
+    yt="yt-dlp --add-metadata -i" \
+    yta="yt-dlp -x -f bestaudio/best" \
+    ytm="yt-dlp -x -f 251 --add-metadata " \
 
 # Open coniguration files
 alias \
@@ -36,6 +36,7 @@ alias \
     cfterm="$EDITOR ~/.config/alacritty/alacritty.yml" \
     cfwm="$EDITOR ~/.config/bspwm/bspwmrc" \
     cfk="$EDITOR ~/.config/sxhkd/sxhkdrc" \
+    cfaerc="$EDITOR ~/.config/aerc/aerc.conf" \
     cfsway="$EDITOR ~/.config/sway/config" \
     cflf="$EDITOR ~/.config/lf/lfrc" \
     cfqb="$EDITOR ~/.config/qutebrowser/config.py" \

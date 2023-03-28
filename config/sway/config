@@ -11,7 +11,7 @@ exec {
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema cursor-theme 'posy-white'
+    gsettings set $gnome-schema cursor-theme 'posy-black'
     gsettings set $gnome-schema font-name 'Go 12'
 }
 
@@ -28,7 +28,7 @@ set $up k
 set $right l
 
 set $term alacritty
-set $menu exec fuzzel -f Go:size=12 -b eceff4f1 -t 2e3440f1 -s d8dee9f1 -m 5e81acff -S 2e3440f1
+set $menu exec fuzzel -f Go:size=12 -b fbf1c7ff -t 3c3836ff -s d5c4a1ff -m cc241dff -S 3c3836ff
 
 font pango:Go 11
 
@@ -38,8 +38,9 @@ output * bg $HOME/.config/wallpaper.png fill
 #output * adaptive_sync on
 
 input type:keyboard {
-    xkb_layout dvorak-br,us
-    xkb_options "grp:alt_shift_toggle,caps:swapescape"
+    xkb_layout us
+    #kb_variant alt-intl
+    #xkb_options "grp:alt_shift_toggle"
 }
 
 default_border pixel
@@ -87,6 +88,7 @@ bindsym $mod+equal move workspace to output right
     bindsym $mod+Return exec $term
     bindsym $mod+Shift+Return exec samedir
     bindsym $mod+space exec $menu
+	bindsym $mod+Scroll_Lock exec swaylock
     bindsym $mod+b exec $BROWSER
     bindsym $mod+alt+f exec $term -e lf
     bindsym $mod+c exec $term -e calcurse
@@ -215,7 +217,20 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-#colors
+# gruvbox palette
+set $bg0 #282828
+set $bg1 #3c3836
+set $fg0 #fbf1c7
+set $fg1 #ebdbb2
+set $fg4 #a89984
+set $red #fb4934
+set $yellow #fabd2f
+set $blue #83a598
+set $aqua #8ec07c
+set $purple #d3869b
+set $green #b8bb26
+
+# nord palette
 set $nord0 #2E3440
 set $nord1 #3B4252
 set $nord2 #434C5E
@@ -242,27 +257,30 @@ bar {
     strip_workspace_numbers yes
 
     colors {
-        statusline $nord8
-        background $nord0
-        inactive_workspace $nord1 $nord1 $nord8
-        focused_workspace $nord4 $nord4 $nord0
+        statusline $fg1
+        background $bg0
+        inactive_workspace $bg1 $bg1 $aqua
+        focused_workspace $fg1 $fg1 $bg0
+        active_workspace $fg4 $fg4 $bg0
+        urgent_workspace $bg1 $red $fg1
     }
 }
 
 # class                 border  backgr. text indicator child_border
-client.focused          $nord4 $nord4 $nord0 $nord15 $nord4
-client.focused_inactive $nord4 $nord4 $nord0 $nord15 $nord4
-client.unfocused        $nord4 $nord1 $nord9 $nord15 $nord1
-client.urgent           $nord4 $nord11 $nord4 $nord11 $nord11
+client.focused          $fg1 $fg1 $bg0 $purple $fg1
+client.focused_inactive $fg4 $fg4 $bg0 $purple $bg0
+client.unfocused        $fg0 $bg1 $blue $purple $bg1
+client.urgent           $fg1 $red $bg0 $red $red
 
 # Application specific settings
-assign [app_id="qutebrowser"] workspace $ws3
-assign [app_id="firefox"] workspace $ws3
+assign [app_id="org.qutebrowser.qutebrowser"] workspace $ws3
+assign [app_id="Firefox"] workspace $ws3
 assign [app_id="zathura"] workspace $ws4
-assign [app_id="telegram"] workspace $ws5
-assign [app_id="Discord"] workspace $ws5
-assign [app_id="signal"] workspace $ws5
-for_window [title="Firefox - Sharing Indicator"] floating enable
-for_window [title="Firefox — Sharing Indicator"] nofocus
+assign [app_id="org.telegram.desktop"] workspace $ws5
+assign [instance="discord"] workspace $ws5
+assign [instance="signal"] workspace $ws5
+for_window {
+    [window_role="(pop-up|bubble|dialog)"] floating enable
+ }
 
 include /etc/sway/config.d

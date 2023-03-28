@@ -3,7 +3,7 @@ c.auto_save.session = True
 c.content.javascript.alert = True
 c.colors.webpage.preferred_color_scheme = "dark"
 
-config.set("zoom.default", 120)
+config.set("zoom.default", 110)
 
 c.tabs.indicator.width = 0
 
@@ -24,9 +24,11 @@ c.fonts.web.family.sans_serif = "Fira Sans"
 c.fonts.web.family.standard = "Fira Sans"
 c.fonts.web.family.fixed = "Go Mono"
 
-config.source('nord-qutebrowser.py')
+config.source('gruvbox-dark-qutebrowser.py')
+
+c.hints.chars = "aoeuidhtns"
 
 # Minimizing fingerprinting
-config.set("content.headers.accept_language", "en-US,en;q=0.5")
-config.set("content.headers.custom", {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"})
-config.set("content.canvas_reading", False)
+#config.set("content.headers.accept_language", "en-US,en;q=0.5")
+#config.set("content.headers.custom", {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"})
+#config.set("content.canvas_reading", False)

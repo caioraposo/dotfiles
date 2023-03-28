@@ -7,7 +7,7 @@ vis.events.subscribe(vis.events.INIT, function()
 end)
 
 vis.events.subscribe(vis.events.WIN_OPEN, function(win)
-	vis:command('set theme nord')
+	vis:command('set theme gruvbox')
 	vis:command('set autoindent')
 	vis:command('set expandtab off')
 	vis:command('set relativenumbers')
@@ -23,14 +23,17 @@ vis.events.subscribe(vis.events.WIN_OPEN, function(win)
 	vis:map(vis.modes.VISUAL, 'Y', ':> wl-copy 2>/dev/null -n<Enter>')
 	vis:map(vis.modes.VISUAL, 'P', '"+y')
 
+
 	vis.win.tabwidth = 4
 	if win.syntax == 'ansi_c' or win.syntax == 'hare' then
 		vis.win.tabwidth = 8
-	elseif win.syntax == 'python' or win.syntax == 'rust' then
+	elseif win.syntax == 'python' then
 		vis:command('set expandtab on')
 	elseif win.file.name and win.file.name:find("COMMIT_EDITMSG") then
 		vis:command('set colorcolumn 72')
 		win:set_syntax("diff")
+	elseif win.file.name and win.file.name:find(".eml") then
+		vis:command('set colorcolumn 70')
 	end
 
 	vis:command('set tabwidth '..vis.win.tabwidth)

@@ -12,6 +12,7 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 " Deleting a buffer without closing the window
 " see: https://vim.fandom.com/wiki/Deleting_a_buffer_without_closing_the_window
+Plug 'jpe90/export-colorscheme.nvim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
@@ -19,6 +20,8 @@ Plug 'tpope/vim-surround'
 Plug 'rust-lang/rust.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'sainnhe/gruvbox-material'
+Plug 'morhetz/gruvbox'
 Plug 'dag/vim-fish'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryuta69/elly.vim'
@@ -27,7 +30,7 @@ call plug#end()
 let g:nord_italic = 1
 let g:nord_underline = 1
 
-color nord
+colorscheme gruvbox-material
 set t_ut=
 
 let g:lightline = {

@@ -1,0 +1,125 @@
+# Gruvbox palette
+bg0: &bg0 282828ff
+bg1: &bg1 3c3836ff
+fg0: &fg0 fbf1c7ff
+fg1: &fg1 ebdbb2ff
+fg4: &fg4 a89984ff
+red: &red fb4934ff
+yellow: &yellow fabd2fff
+blue: &blue 83a598ff
+aqua: &aqua 8ec07cff
+purple: &purple d3869bff
+green: &green b8bb26ff
+
+bar:
+  height: 26
+  location: bottom
+  spacing: 5
+  margin: 7
+
+  # Default font
+  font: Go:size=14
+
+  foreground: *fg1
+  background: *bg0
+
+  border:
+    width: 1
+    color: *fg4
+    margin: 0
+    top-margin: 0
+
+  left:
+    - i3:
+        sort: native
+        strip-workspace-numbers: true
+
+        anchors: # Not used (directly) by f00bar; used here to avoid duplication
+          - string: &i3_common {margin: 5}
+          - string: &default {<<: *i3_common, text: "{name}"}
+          - focused: &focused
+              foreground: *bg0
+              deco: {stack: [background: {color: *fg1}]}
+          - invisible: &invisible {foreground: ffffff55}
+          - urgent: &urgent
+              foreground: *fg1
+              deco: {stack: [background: {color: *red}]}
+          - map: &i3_mode
+              default:
+                - string:
+                    margin: 5
+                    text: "{mode}"
+                    deco: {background: {color: cc421dff}}
+                - empty: {right-margin: 7}
+              conditions:
+                mode == default: {empty: {}}
+        content:
+          "":
+            map:
+              conditions:
+                state == focused:   {string: {<<: [*default, *focused]}}
+                state == unfocused: {string: {<<: *default}}
+                state == invisible: {string: {<<: [*default, *invisible]}}
+                state == urgent:    {string: {<<: [*default, *urgent]}}
+
+    #- foreign-toplevel:
+    #    content:
+    #      map:
+    #        conditions:
+    #          ~activated: {empty: {}}
+    #          activated:
+    #            - string: {text: "{app-id}", foreground: ffa0a0ff}
+    #            - string: {text: ": {title}"}
+  center:
+    - mpd:
+        host: "/home/caio/.local/state/mpd/socket"
+        anchors:
+          list: &artist_album_title
+            spacing: 0
+            items:
+              - map:
+                  conditions:
+                    state == playing: {string: {text: "{artist}"}}
+                    state == paused: {string: {text: "{artist}", foreground: *bg1}}
+              - string: {text: " | ", foreground: *fg4}
+              - map:
+                  conditions:
+                    state == playing: {string: {text: "{album}"}}
+                    state == paused: {string: {text: "{album}", foreground: *bg1}}
+              - string: {text: " | ", foreground: *fg4}
+              - map:
+                  conditions:
+                    state == playing: {string: {text: "{title}", foreground: *aqua}}
+                    state == paused: {string: {text: "{title}", foreground: *bg1}}
+
+        content:
+          map:
+            margin: 10
+            conditions:
+              state == offline: {string: {text: offline, foreground: ff0000ff}}
+              state == stopped: {string: {text: stopped}}
+              state == paused: {list: *artist_album_title}
+              state == playing: {list: *artist_album_title}
+  right:
+    - sway-xkb:
+        identifiers: [1:1:AT_Translated_Set_2_keyboard]
+        content:
+          - string: {text: "{layout}"}
+    - pipewire:
+        content:
+          map:
+            conditions:
+              type == sink:
+                map:
+                  conditions:
+                    muted: {string: {text: "MUTE", foreground: *red}}
+                    ~muted:
+                      string:
+                        text: "VOL {cubic_volume}%"
+                        foreground: *fg1
+    - clock:
+        date-format: "%A %Y-%m-%d"
+        time-format: "%H:%M"
+        content:
+          - string: {text: "{date}", right-margin: 5}
+          - string: {text: "{time}"}

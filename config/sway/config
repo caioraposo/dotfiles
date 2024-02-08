@@ -1,10 +1,11 @@
 # Autostart
 exec {
     mako
+    yambar
+    mpd
     wlsunset -T 5000 -t 1900 -l -1.4 -L -48.4 # Belém lat/long
     pipewire
     /usr/libexec/xdg-desktop-portal -r & /usr/libexec/xdg-desktop-portal-wlr
-    #pipewire-media-session
     dbus-update-activation-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 }
 
@@ -30,18 +31,22 @@ set $right l
 set $term alacritty
 set $menu exec fuzzel -f Go:size=12 -b fbf1c7ff -t 3c3836ff -s d5c4a1ff -m cc241dff -S 3c3836ff
 
-font pango:Go 11
+font pango: Go, M PLUS 2 11
 
-output DP-2 mode 1920x1080@144Hz
-output HDMI-A-1 mode 1920x1080@60Hz pos 1920 0
-output * bg $HOME/.config/wallpaper.png fill
+output DP-1 mode 1920x1080@144Hz bg $HOME/.config/wallpaper.png fill
+#output DP-1 mode 1920x1080@144Hz pos 1920 0 bg $HOME/.config/wallpaper.png fill
+#output DP-2 mode 1920x1080@60Hz pos 0 0 bg $HOME/.config/wallpaper-astro.jpg fill
 #output * adaptive_sync on
+
+#gaps outer 5
+gaps inner 5
 
 input type:keyboard {
     xkb_layout us
-    #kb_variant alt-intl
+    xkb_variant altgr-intl
     #xkb_options "grp:alt_shift_toggle"
 }
+bindsym $mod+alt+space exec wlanthy-toggle
 
 default_border pixel
 
@@ -57,6 +62,16 @@ set $ws7 7:七
 set $ws8 8:八
 set $ws9 9:九
 set $ws10 10:十
+set $ws11 11:💜
+set $ws12 12:👯
+set $ws13 13:🌎
+set $ws14 14:📃
+set $ws15 15:☎️
+set $ws16 16:🎵
+set $ws17 17:🌟
+set $ws18 18:🌈
+set $ws19 19:🕹️
+set $ws20 20:✉️
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -68,6 +83,16 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+bindsym $mod+KP_End workspace $ws11
+bindsym $mod+KP_Down workspace $ws12
+bindsym $mod+KP_Next workspace $ws13
+bindsym $mod+KP_Left workspace $ws14
+bindsym $mod+KP_Begin workspace $ws15
+bindsym $mod+KP_Right workspace $ws16
+bindsym $mod+KP_Home workspace $ws17
+bindsym $mod+KP_Up workspace $ws18
+bindsym $mod+KP_Prior workspace $ws19
+bindsym $mod+KP_Insert workspace $ws20
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -79,20 +104,28 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+KP_End move container to workspace $ws11
+bindsym $mod+Shift+KP_Down move container to workspace $ws12
+bindsym $mod+Shift+KP_Next move container to workspace $ws13
+bindsym $mod+Shift+KP_Left move container to workspace $ws14
+bindsym $mod+Shift+KP_Begin move container to workspace $ws15
+bindsym $mod+Shift+KP_Right move container to workspace $ws16
+bindsym $mod+Shift+KP_Home move container to workspace $ws17
+bindsym $mod+Shift+KP_Up move container to workspace $ws18
+bindsym $mod+Shift+KP_Prior move container to workspace $ws19
+bindsym $mod+Shift+KP_Insert move container to workspace $ws20
 # Move workspace to monitor 
 bindsym $mod+equal move workspace to output right
 
 ### Key bindings
     bindsym $mod+q kill
-    bindsym $mod+Shift+q exec kill $(sway_get_focused_pid)
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+Return exec samedir
     bindsym $mod+space exec $menu
-	bindsym $mod+Scroll_Lock exec swaylock
+	bindsym $mod+Ctrl+l exec swaylock
     bindsym $mod+b exec $BROWSER
     bindsym $mod+alt+f exec $term -e lf
     bindsym $mod+c exec $term -e calcurse
-    bindsym $mod+m exec $term -e cmus
+    bindsym $mod+m exec $term -e ncmpcpp
     bindsym $mod+alt+v exec $term -e pulsemixer
     bindsym $mod+End exec doas poweroff
     bindsym $mod+Insert exec doas zzz
@@ -115,9 +148,9 @@ bindsym $mod+equal move workspace to output right
     bindsym $mod+Shift+e exec swaymsg exit
 
     # Multimedia
-    bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +5
-    bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -5
-    bindsym XF86AudioMute exec pulsemixer --toggle-mute
+    bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+
+    bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-
+    bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
     # Screenshot
     bindsym Mod4+p exec grimshot save active
@@ -230,30 +263,12 @@ set $aqua #8ec07c
 set $purple #d3869b
 set $green #b8bb26
 
-# nord palette
-set $nord0 #2E3440
-set $nord1 #3B4252
-set $nord2 #434C5E
-set $nord3 #4C566A
-set $nord4 #D8DEE9
-set $nord5 #E5E9F0
-set $nord6 #ECEFF4
-set $nord7 #8FBCBB
-set $nord8 #88C0D0
-set $nord9 #81A1C1
-set $nord10 #5E81AC
-set $nord11 #BF616A
-set $nord12 #D08770
-set $nord13 #EBCB8B
-set $nord14 #A3BE8C
-set $nord15 #B48EAD
-
 bar {
-    status_command custom_statusbar
+	mode invisible
+    #status_command custom_statusbar
 
     position bottom
     pango_markup disabled
-    font Go 11
     strip_workspace_numbers yes
 
     colors {
@@ -273,12 +288,11 @@ client.unfocused        $fg0 $bg1 $blue $purple $bg1
 client.urgent           $fg1 $red $bg0 $red $red
 
 # Application specific settings
-assign [app_id="org.qutebrowser.qutebrowser"] workspace $ws3
-assign [app_id="Firefox"] workspace $ws3
-assign [app_id="zathura"] workspace $ws4
-assign [app_id="org.telegram.desktop"] workspace $ws5
-assign [instance="discord"] workspace $ws5
-assign [instance="signal"] workspace $ws5
+assign [app_id="org.qutebrowser.qutebrowser"] workspace $ws13
+assign [app_id="Firefox"] workspace $ws13
+assign [instance="discord"] workspace $ws15
+assign [instance="signal"] workspace $ws15
+assign [instance="steam"] workspace $ws19
 for_window {
     [window_role="(pop-up|bubble|dialog)"] floating enable
  }

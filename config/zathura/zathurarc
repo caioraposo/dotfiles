@@ -12,8 +12,8 @@ map i recolor
 #set statusbar-bg "#3B4252"
 #set notification-error-bg "#BF616A"
 # Gruvbox color palette
-set recolor-lightcolor "#EBDBB2"
-set recolor-darkcolor "#282828"
+set recolor-lightcolor "#282828"
+set recolor-darkcolor "#EBDBB2"
 set default-fg "#EBDBB2"
 set default-bg "#282828"
 set inputbar-fg "#504945"

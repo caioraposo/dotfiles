@@ -4,11 +4,7 @@ alacritty
 mksh
 lf
 fzf
-zathura
-zathura-pdf-mupdf
-cmus
-cmus-opus
-cmus-pulseaudio
+mupdf
 firefox
 pipewire
 wireplumber
@@ -17,10 +13,9 @@ cronie
 curl
 git
 gnupg
-pass
 rustup
 opendoas
-exa
+eza
 fd
 ripgrep
 calcurse
@@ -36,6 +31,5 @@ xdg-desktop-portal-wlr
 catgirl
 aerc
 font-fira-otf
-font-libertine-otf
 ipafont-fonts-otf
 font-go-ttf

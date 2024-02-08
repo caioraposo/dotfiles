@@ -7,6 +7,8 @@ vis.events.subscribe(vis.events.INIT, function()
 end)
 
 vis.events.subscribe(vis.events.WIN_OPEN, function(win)
+	vis:command(string.format(":!alacritty msg config window.title=%s", win.file.name))
+
 	vis:command('set theme gruvbox')
 	vis:command('set autoindent')
 	vis:command('set expandtab off')
@@ -19,9 +21,9 @@ vis.events.subscribe(vis.events.WIN_OPEN, function(win)
 
 	-- Y and P for system clipboard
 	vis:map(vis.modes.NORMAL, 'Y', ':> wl-copy 2>/dev/null -n<Enter>')
-	vis:map(vis.modes.NORMAL, 'P', '"+y')
+	vis:map(vis.modes.NORMAL, 'P', ':< wl-paste 2>/dev/null -n<Enter>')
 	vis:map(vis.modes.VISUAL, 'Y', ':> wl-copy 2>/dev/null -n<Enter>')
-	vis:map(vis.modes.VISUAL, 'P', '"+y')
+	vis:map(vis.modes.VISUAL, 'P', ':< wl-paste 2>/dev/null -n<Enter>')
 
 
 	vis.win.tabwidth = 4
@@ -37,6 +39,10 @@ vis.events.subscribe(vis.events.WIN_OPEN, function(win)
 	end
 
 	vis:command('set tabwidth '..vis.win.tabwidth)
+end)
+
+vis.events.subscribe(vis.events.WIN_CLOSE, function(win)
+	vis:command(":!alacritty msg config window.title=Alacritty")
 end)
 
 -- adapted from https://github.com/neosimsim/myenv/blob/78ac724f811107109ef647342b4e1fb3974dc422/dotfiles/config/vis/visrc.lua

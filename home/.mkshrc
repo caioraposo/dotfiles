@@ -1,6 +1,6 @@
 HISTFILE="${XDG_STATE_HOME:-$HOME/.cache}/mksh/history"
 HISTSIZE=50000
-PS1='${PWD/$HOME/\~} $(if (( USER_ID )); then print \λ; else print \#; fi) '
+PS1='${PWD/$HOME/\~} $(if (( USER_ID )); then print \❯; else print \#; fi) '
 
 set -o vi
 eval "$(pyenv init -)"

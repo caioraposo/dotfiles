@@ -1,7 +1,7 @@
 #!/bin/sh
 alias \
-    e="ls -hN --color=auto --group-directories-first" \
-    ea="ls -lahN --color=auto --group-directories-first" \
+    e="eza" \
+    ea="eza -la" \
     v="$EDITOR" \
     vi="$EDITOR" \
     vf='$EDITOR "$(fzf)"' \
@@ -22,7 +22,7 @@ alias \
     xq="xbps-query -Rs" \
     yt="yt-dlp --add-metadata -i" \
     yta="yt-dlp -x -f bestaudio/best" \
-    ytm="yt-dlp -x -f 251 --add-metadata " \
+    ytm="yt-dlp -x --audio-quality 0 -f 251 --add-metadata " \
 
 # Open coniguration files
 alias \
@@ -30,10 +30,10 @@ alias \
     cfa="$EDITOR ~/.config/aliasrc" \
     cfz="$EDITOR ~/.config/zathura/zathurarc" \
     cfi3="$EDITOR ~/.config/i3/config" \
-    cfbar="$EDITOR ~/.config/polybar/config" \
+    cfbar="$EDITOR ~/.config/yambar/config.yml" \
     cfnvim="$EDITOR ~/.config/nvim/init.vim" \
     cfvis="$EDITOR ~/.config/vis/visrc.lua" \
-    cfterm="$EDITOR ~/.config/alacritty/alacritty.yml" \
+    cfterm="$EDITOR ~/.config/alacritty/alacritty.toml" \
     cfwm="$EDITOR ~/.config/bspwm/bspwmrc" \
     cfk="$EDITOR ~/.config/sxhkd/sxhkdrc" \
     cfaerc="$EDITOR ~/.config/aerc/aerc.conf" \

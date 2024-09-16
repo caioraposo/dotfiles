@@ -1,0 +1,4 @@
+#!/bin/sh
+
+notify-send "Break Time."
+mpv --no-video --volume=60 ~/audio/alarm-clock-bell.wav

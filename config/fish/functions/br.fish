@@ -1,1 +1,0 @@
-/home/caio/.local/share/broot/launcher/fish/br.fish

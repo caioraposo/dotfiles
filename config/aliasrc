@@ -16,10 +16,6 @@ alias \
     ga="git add" \
     gd="git diff" \
     gl="git log" \
-    xi="doas xbps-install -S" \
-    xu="doas xbps-install -Su" \
-    xr="doas xbps-remove -R" \
-    xq="xbps-query -Rs" \
     yt="yt-dlp --add-metadata -i" \
     yta="yt-dlp -x -f bestaudio/best" \
     ytm="yt-dlp -x --audio-quality 0 -f 251 --add-metadata " \

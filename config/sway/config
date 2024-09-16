@@ -1,10 +1,8 @@
 # Autostart
 exec {
     mako
-    yambar
     mpd
     wlsunset -T 5000 -t 1900 -l -1.4 -L -48.4 # Belém lat/long
-    pipewire
     /usr/libexec/xdg-desktop-portal -r & /usr/libexec/xdg-desktop-portal-wlr
     dbus-update-activation-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 }
@@ -37,9 +35,6 @@ output DP-1 mode 1920x1080@144Hz bg $HOME/.config/wallpaper.png fill
 #output DP-1 mode 1920x1080@144Hz pos 1920 0 bg $HOME/.config/wallpaper.png fill
 #output DP-2 mode 1920x1080@60Hz pos 0 0 bg $HOME/.config/wallpaper-astro.jpg fill
 #output * adaptive_sync on
-
-#gaps outer 5
-gaps inner 5
 
 input type:keyboard {
     xkb_layout us
@@ -264,8 +259,7 @@ set $purple #d3869b
 set $green #b8bb26
 
 bar {
-	mode invisible
-    #status_command custom_statusbar
+    status_command custom_statusbar
 
     position bottom
     pango_markup disabled

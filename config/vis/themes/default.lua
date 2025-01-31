@@ -1,0 +1,1 @@
+/home/caio/.config/vis/themes/gruvbox.lua

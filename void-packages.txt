@@ -1,4 +1,4 @@
-xorg
+xorg-minimal
 socklog-void
 alacritty
 mksh
@@ -33,3 +33,4 @@ aerc
 font-fira-otf
 ipafont-fonts-otf
 font-go-ttf
+wlsunset

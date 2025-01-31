@@ -6,6 +6,8 @@ zathura
 qutebrowser
 pipewire
 wireplumber
+calcurse
+ncmpc
 mpv
 mpd
 cronie
@@ -30,6 +32,9 @@ rsync
 fuzzel
 flatpak
 7zip
-seatd
 mako
 libnotify
+xdg-utils
+wl-clipboard
+xdg-desktop-portal
+xdg-desktop-portal-wlr

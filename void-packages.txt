@@ -1,4 +1,4 @@
-xorg
+xorg-minimal
 socklog-void
 alacritty
 mksh

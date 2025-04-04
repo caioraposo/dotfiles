@@ -2,11 +2,11 @@
 # Profile file. Runs on login. Environmental variables are set here.
 
 # Default programs
-export EDITOR="nvim"
+export EDITOR="vise"
 export TERMINAL="alacritty"
 export BROWSER="qutebrowser"
 export READER="zathura"
-export FILE="lf"
+export FILE_MANAGER="lf"
 export CALENDAR="calcurse"
 
 # XDG Base Directories
@@ -16,19 +16,22 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 # XDG User Directories
-export XDG_DESKTOP_DIR="$HOME/desktop"
-export XDG_DOCUMENTS_DIR="$HOME/documents"
-export XDG_DOWNLOAD_DIR="$HOME/downloads"
-export XDG_MUSIC_DIR="$HOME/music"
-export XDG_PICTURES_DIR="$HOME/pictures"
-export XDG_VIDEOS_DIR="$HOME/videos"
+export XDG_DESKTOP_DIR="$HOME/Desktop"
+export XDG_DOCUMENTS_DIR="$HOME/Documents"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads"
+export XDG_MUSIC_DIR="$HOME/Music"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_VIDEOS_DIR="$HOME/Videos"
 
 export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:$XDG_DATA_HOME/cargo/bin"
 export PATH="$PATH:$XDG_DATA_HOME/go/bin"
 export PATH="$PATH:$XDG_DATA_HOME/pyenv/bin"
 export PATH="$PATH:$HOME/.local/src/cproc/qbe/obj"
-export PATH="$PATH:/opt/texlive/2022/bin/x86_64-linuxmusl/"
+export PATH="$PATH:/usr/local/texlive/2024/bin/x86_64-linuxmusl/"
+
+export MANPATH="$MANPATH:/usr/local/texlive/2024/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:/usr/local/texlive/2024/texmf-dist/doc/info"
 
 # Other programs settings:
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
@@ -53,10 +56,11 @@ export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_TYPE=wayland
 export _JAVA_AWT_WM_NONREPARENTING=1
 export SDL_VIDEODRIVER=wayland
-export QT_QPA_PLATFORM=wayland-egl
+export QT_QPA_PLATFORM=wayland
 export GDK_BACKEND=wayland,x11
 export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
 #export WLR_DRM_NO_MODIFIERS=1
 
-# startx at login
+export ENV=$HOME/.kshrc
+
 if [ -z $DISPLAY ] && [ $(tty) = /dev/tty1 ]; then exec sway; fi

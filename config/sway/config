@@ -1,8 +1,8 @@
 # Autostart
 exec {
     mako
-    mpd
-    wlsunset -T 5000 -t 1900 -l -1.4 -L -48.4 # Belém lat/long
+	mpd
+	wlsunset -T 5000 -t 1900 -l -1.4 -L -48.4 # Belém lat/long
     /usr/libexec/xdg-desktop-portal -r & /usr/libexec/xdg-desktop-portal-wlr
     dbus-update-activation-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 }
@@ -14,10 +14,10 @@ exec_always {
     gsettings set $gnome-schema font-name 'Go 12'
 }
 
-# Lock after 30 minutes then idle after 5 seconds
+# Lock after 5 minutes then idle after 5 seconds
 exec swayidle -w \
-    timeout 1800 'swaylock' \
-    timeout 1805 'swaymsg "output * dpms off"' \
+    timeout 300 'swaymsg "output DP-1 dpms off"' \
+    timeout 600 'swaylock' \
     resume 'swaymsg "output * dpms on"'
 
 set $mod Mod4
@@ -27,13 +27,12 @@ set $up k
 set $right l
 
 set $term alacritty
-set $menu exec fuzzel -f Go:size=12 -b fbf1c7ff -t 3c3836ff -s d5c4a1ff -m cc241dff -S 3c3836ff
+set $menu exec fuzzel -f FiraGO:size=12 -b eceff4f1 -t 2e3440f1 -s d8dee9f1 -m 5e81acff -S 2e3440f1
 
-font pango: Go, M PLUS 2 11
+font pango: FiraGO 11
 
-output DP-1 mode 1920x1080@144Hz bg $HOME/.config/wallpaper.png fill
-#output DP-1 mode 1920x1080@144Hz pos 1920 0 bg $HOME/.config/wallpaper.png fill
-#output DP-2 mode 1920x1080@60Hz pos 0 0 bg $HOME/.config/wallpaper-astro.jpg fill
+output DP-1 mode 2560x1440@360Hz
+output DP-2 mode 1980x1080@144Hz transform 270 pos 0 0 bg $HOME/Pictures/Wallpapers/cyberpunk-samurai.jpg fill
 #output * adaptive_sync on
 
 input type:keyboard {
@@ -43,7 +42,7 @@ input type:keyboard {
 }
 bindsym $mod+alt+space exec wlanthy-toggle
 
-default_border pixel
+default_border pixel 1
 
 ## Workspaces
 # Workspace name
@@ -66,7 +65,7 @@ set $ws16 16:🎵
 set $ws17 17:🌟
 set $ws18 18:🌈
 set $ws19 19:🕹️
-set $ws20 20:✉️
+set $ws20 20:📧
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -120,7 +119,7 @@ bindsym $mod+equal move workspace to output right
     bindsym $mod+b exec $BROWSER
     bindsym $mod+alt+f exec $term -e lf
     bindsym $mod+c exec $term -e calcurse
-    bindsym $mod+m exec $term -e ncmpcpp
+    bindsym $mod+m exec $term -e ncmpc
     bindsym $mod+alt+v exec $term -e pulsemixer
     bindsym $mod+End exec doas poweroff
     bindsym $mod+Insert exec doas zzz
@@ -148,10 +147,9 @@ bindsym $mod+equal move workspace to output right
     bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
     # Screenshot
-    bindsym Mod4+p exec grimshot save active
-    bindsym Mod4+Shift+p exec grimshot save area
-    bindsym Mod4+Mod1+p exec grimshot save output
-    bindsym Mod4+Ctrl+p exec grimshot save window
+    bindsym Mod4+p exec grim ~/Pictures/Screenshots/$(date +"%Y-%m-%d_%H:%M:%S.png")
+    bindsym Mod4+Shift+p exec slurp | grim -g - ~/Pictures/Screenshots/$(date +"%Y-%m-%d_%H:%M:%S.png")
+    bindsym Mod4+Ctrl+p exec grim -g "$(slurp -d)" - | wl-copy 
 
     # Video recording
     bindsym Mod4+F9 exec wf-recorder -a -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")
@@ -246,6 +244,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # gruvbox palette
+set $bg0_h #1d2021
 set $bg0 #282828
 set $bg1 #3c3836
 set $fg0 #fbf1c7
@@ -258,28 +257,62 @@ set $aqua #8ec07c
 set $purple #d3869b
 set $green #b8bb26
 
+# nord palette
+set $nord0 #2e3440
+set $nord1 #3b4252
+set $nord2 #434c5e
+set $nord3 #4c566a
+set $nord4 #d8dee9
+set $nord5 #e5e9f0
+set $nord6 #eceff4
+set $nord7 #8fbcbb
+set $nord8 #88c0d0
+set $nord9 #81a1c1
+set $nord10 #5e81ac
+set $nord11 #bf616a
+set $nord12 #d08770
+set $nord13 #ebcb8b
+set $nord14 #a3be8c
+set $nord15 #b48ead
+
 bar {
     status_command custom_statusbar
+	font pango: FiraGO, M PLUS 2, OpenMoji Color 11
 
     position bottom
+    mode invisible
     pango_markup disabled
     strip_workspace_numbers yes
 
     colors {
-        statusline $fg1
-        background $bg0
-        inactive_workspace $bg1 $bg1 $aqua
-        focused_workspace $fg1 $fg1 $bg0
-        active_workspace $fg4 $fg4 $bg0
-        urgent_workspace $bg1 $red $fg1
+    	# nord
+		statusline $nord8
+		background $nord0
+		inactive_workspace $nord1 $nord1 $nord8
+		focused_workspace $nord4 $nord4 $nord0
+
+		# gruvbox
+        #statusline $fg1
+        #background $bg0
+        #inactive_workspace $bg1 $bg1 $aqua
+        #focused_workspace $fg1 $fg1 $bg0
+        #active_workspace $fg4 $fg4 $bg0
+        #urgent_workspace $bg1 $red $fg1
     }
 }
 
 # class                 border  backgr. text indicator child_border
-client.focused          $fg1 $fg1 $bg0 $purple $fg1
-client.focused_inactive $fg4 $fg4 $bg0 $purple $bg0
-client.unfocused        $fg0 $bg1 $blue $purple $bg1
-client.urgent           $fg1 $red $bg0 $red $red
+# nord
+client.focused          $nord4 $nord4 $nord0 $nord15 $nord4
+client.focused_inactive $nord4 $nord4 $nord0 $nord15 $nord4
+client.unfocused        $nord4 $nord1 $nord9 $nord15 $nord1
+client.urgent           $nord4 $nord11 $nord4 $nord11 $nord11
+
+# gruvbox
+#client.focused          $fg1 $fg1 $bg0 $purple $fg1
+#client.focused_inactive $fg4 $fg4 $bg0 $purple $bg0
+#client.unfocused        $fg0 $bg1 $blue $purple $bg0_h
+#client.urgent           $fg1 $red $bg0 $red $red
 
 # Application specific settings
 assign [app_id="org.qutebrowser.qutebrowser"] workspace $ws13

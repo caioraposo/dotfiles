@@ -1,36 +1,38 @@
-live_config_reload = true
+general.live_config_reload = true
 
 [bell]
 animation = "EaseOutExpo"
 color = "0xffffff"
 duration = 0
 
-[colors]
-draw_bold_text_with_bright_colors = true
+# Colors (Nord)
 
-[colors.bright]
-black = "0x928374"
-blue = "0x83a598"
-cyan = "0x8ec07c"
-green = "0xb8bb26"
-magenta = "0xd3869b"
-red = "0xfb4934"
-white = "0xebdbb2"
-yellow = "0xfabd2f"
-
-[colors.normal]
-black = "0x282828"
-blue = "0x458588"
-cyan = "0x689d6a"
-green = "0x98971a"
-magenta = "0xb16286"
-red = "0xcc241d"
-white = "0xebdbb2"
-yellow = "0xd79921"
-
+# Default colors
 [colors.primary]
-background = "0x282828"
-foreground = "0xebdbb2"
+background = '#2E3440'
+foreground = '#D8DEE9'
+
+# Normal colors
+[colors.normal]
+black   = '#3B4252'
+red     = '#BF616A'
+green   = '#A3BE8C'
+yellow  = '#EBCB8B'
+blue    = '#81A1C1'
+magenta = '#B48EAD'
+cyan    = '#88C0D0'
+white   = '#E5E9F0'
+
+# Bright colors
+[colors.bright]
+black   = '#4C566A'
+red     = '#BF616A'
+green   = '#A3BE8C'
+yellow  = '#EBCB8B'
+blue    = '#81A1C1'
+magenta = '#B48EAD'
+cyan    = '#8FBCBB'
+white   = '#ECEFF4'
 
 [cursor]
 style = "Block"
@@ -38,7 +40,7 @@ unfocused_hollow = true
 
 [font]
 size = 13
-normal.family = "Go Mono"
+normal.family = "IBM Plex Mono"
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"

@@ -10,5 +10,7 @@ set colorcolumn=100
 set termguicolors
 set tabstop=4
 set shiftwidth=4
+set number
 set relativenumber
 set showcmd
+set nohlsearch

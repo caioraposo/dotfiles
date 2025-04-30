@@ -3,9 +3,9 @@ alias \
     e="eza" \
     ea="eza -la" \
     v="$EDITOR" \
-    vi="$EDITOR" \
     vf='$EDITOR "$(fzf)"' \
     vo='$TERMINAL -e $EDITOR "$(fzf)"' \
+    vrg='$EDITOR +"rg true"' \
     dvi="doas $EDITOR" \
     py="python3" \
     g="git" \

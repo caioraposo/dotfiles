@@ -1,8 +1,5 @@
 # Autostart
 exec {
-    mako
-	mpd
-	wlsunset -T 5000 -t 1900 -l -1.4 -L -48.4 # Belém lat/long
     /usr/libexec/xdg-desktop-portal -r & /usr/libexec/xdg-desktop-portal-wlr
     dbus-update-activation-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 }
@@ -17,7 +14,7 @@ exec_always {
 # Lock after 5 minutes then idle after 5 seconds
 exec swayidle -w \
     timeout 300 'swaymsg "output DP-1 dpms off"' \
-    timeout 600 'swaylock' \
+    timeout 1800 'swaylock' \
     resume 'swaymsg "output * dpms on"'
 
 set $mod Mod4
@@ -32,7 +29,7 @@ set $menu exec fuzzel -f FiraGO:size=12 -b eceff4f1 -t 2e3440f1 -s d8dee9f1 -m 5
 font pango: FiraGO 11
 
 output DP-1 mode 2560x1440@360Hz
-output DP-2 mode 1980x1080@144Hz transform 270 pos 0 0 bg $HOME/Pictures/Wallpapers/cyberpunk-samurai.jpg fill
+output DP-2 mode 1980x1080@144Hz transform 270 pos 0 0 bg $HOME/Pictures/Wallpapers/voodoo-boys.png fill
 #output * adaptive_sync on
 
 input type:keyboard {
@@ -303,9 +300,9 @@ bar {
 
 # class                 border  backgr. text indicator child_border
 # nord
-client.focused          $nord4 $nord4 $nord0 $nord15 $nord4
-client.focused_inactive $nord4 $nord4 $nord0 $nord15 $nord4
-client.unfocused        $nord4 $nord1 $nord9 $nord15 $nord1
+client.focused          $nord4 $nord4 $nord0 $nord15 $nord8
+client.focused_inactive $nord4 $nord4 $nord0 $nord15 $nord1
+client.unfocused        $nord4 $nord1 $nord9 $nord15 $nord0
 client.urgent           $nord4 $nord11 $nord4 $nord11 $nord11
 
 # gruvbox

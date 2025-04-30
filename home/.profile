@@ -28,10 +28,10 @@ export PATH="$PATH:$XDG_DATA_HOME/cargo/bin"
 export PATH="$PATH:$XDG_DATA_HOME/go/bin"
 export PATH="$PATH:$XDG_DATA_HOME/pyenv/bin"
 export PATH="$PATH:$HOME/.local/src/cproc/qbe/obj"
-export PATH="$PATH:/usr/local/texlive/2024/bin/x86_64-linuxmusl/"
+export PATH="$PATH:/usr/local/texlive/2025/bin/x86_64-linuxmusl/"
 
-export MANPATH="$MANPATH:/usr/local/texlive/2024/texmf-dist/doc/man"
-export INFOPATH="$INFOPATH:/usr/local/texlive/2024/texmf-dist/doc/info"
+export MANPATH="$MANPATH:/usr/local/texlive/2025/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:/usr/local/texlive/2025/texmf-dist/doc/info"
 
 # Other programs settings:
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"

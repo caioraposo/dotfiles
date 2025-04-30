@@ -19,7 +19,7 @@ c.fonts.default_size = "12pt"
 c.colors.webpage.preferred_color_scheme = "dark"
 c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.darkmode.threshold.background = 100
-c.colors.webpage.darkmode.policy.images = "smart-simple"
+c.colors.webpage.darkmode.policy.images = "never"
 
 config.set("content.javascript.enabled", True, "file://*")
 config.set("content.javascript.enabled", True, "chrome://*/*")

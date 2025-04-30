@@ -39,8 +39,8 @@ style = "Block"
 unfocused_hollow = true
 
 [font]
-size = 13
-normal.family = "IBM Plex Mono"
+size = 15
+normal.family = "Iosevka"
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"

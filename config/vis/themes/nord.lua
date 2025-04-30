@@ -1,5 +1,5 @@
--- nord-vis by Caio Raposo <caioraposo@disroot.org>
--- Nord scheme by arcticicestudio
+-- vis-nord by Caio Raposo <caioraposo@disroot.org>
+-- Nord theme by Sven Greb
 
 local lexers = vis.lexers
 
@@ -24,30 +24,35 @@ local colors = {
 
 lexers.colors = colors
 
-local fg = ',fore:'..colors.nord05..','
+local fg = ',fore:'..colors.nord06..','
 local bg = ',back:'..colors.nord00..','
 
 lexers.STYLE_DEFAULT = bg..fg
 lexers.STYLE_NOTHING = bg
 lexers.STYLE_COMMENT = 'fore:'..colors.nord03..',italics'
 lexers.STYLE_NUMBER = 'fore:'..colors.nord0F
-lexers.STYLE_REGEX = 'fore:'..colors.nord0C
+lexers.STYLE_REGEX = 'fore:'..colors.nord0D
 lexers.STYLE_IDENTIFIER = 'fore:'..colors.nord04
 lexers.STYLE_VARIABLE = 'fore:'..colors.nord04
 lexers.STYLE_CONSTANT = 'fore:'..colors.nord04..',bold'
 lexers.STYLE_CLASS = 'fore:'..colors.nord07
 lexers.STYLE_TYPE = 'fore:'..colors.nord07
 lexers.STYLE_LABEL = 'fore:'..colors.nord07
-lexers.STYLE_FUNCTION = 'fore:'..colors.nord08..',bold'
+lexers.STYLE_FUNCTION = 'fore:'..colors.nord08
+lexers.STYLE_FUNCTION_METHOD = 'fore:'..colors.nord08
+lexers.STYLE_FUNCTION_BUILTIN = 'fore:'..colors.nord09
 lexers.STYLE_DEFINITION = 'fore:'..colors.nord08
 lexers.STYLE_KEYWORD = 'fore:'..colors.nord09
-lexers.STYLE_OPERATOR = 'fore:'..colors.nord09
+lexers.STYLE_OPERATOR = 'fore:'..colors.nord06
 lexers.STYLE_TAG = 'fore:'..colors.nord09
 lexers.STYLE_PREPROCESSOR = 'fore:'..colors.nord0A
 lexers.STYLE_ERROR = 'fore:'..colors.nord0B..',italics'
 lexers.STYLE_STRING = 'fore:'..colors.nord0E
 lexers.STYLE_EMBEDDED = 'fore:'..colors.nord04
+lexers.STYLE_ATTRIBUTE = 'fore:'..colors.nord04
+lexers.STYLE_ANNOTATION = 'fore:'..colors.nord0C
 
+lexers.STYLE_WHITESPACE = 'fore:'..colors.nord03
 lexers.STYLE_LINENUMBER = 'fore:'..colors.nord03
 lexers.STYLE_LINENUMBER_CURSOR = 'fore:'..colors.nord04
 lexers.STYLE_CURSOR = 'reverse'
@@ -56,17 +61,17 @@ lexers.STYLE_CURSOR_LINE = 'back:'..colors.nord01
 lexers.STYLE_COLOR_COLUMN = 'back:'..colors.nord01
 lexers.STYLE_SELECTION = 'back:'..colors.nord02
 lexers.STYLE_STATUS = 'fore:'..colors.nord04..',back:'..colors.nord01
-lexers.STYLE_STATUS_FOCUSED = 'fore:'..colors.nord09..',back:'..colors.nord01
+lexers.STYLE_STATUS_FOCUSED = 'fore:'..colors.nord07..',back:'..colors.nord01
 lexers.STYLE_SEPARATOR = lexers.STYLE_DEFAULT
 lexers.STYLE_INFO = 'fore:default,back:default,bold'
 lexers.STYLE_EOF = 'fore:'..colors.nord03
 
--- lexer specific styles
+-- Lexer specific styles taken from the default vis theme.
 
 -- Diff
-lexers.STYLE_ADDITION = 'fore:green'
-lexers.STYLE_DELETION = 'fore:red'
-lexers.STYLE_CHANGE = 'fore:yellow'
+lexers.STYLE_ADDITION = 'fore:'..colors.nord0E
+lexers.STYLE_DELETION = 'fore:'..colors.nord0B
+lexers.STYLE_CHANGE = 'fore:'..colors.nord0D
 
 -- CSS
 lexers.STYLE_PROPERTY = lexers.STYLE_ATTRIBUTE
